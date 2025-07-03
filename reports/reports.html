@@ -44,165 +44,35 @@
 
                 <div class="search-filter">
                     <div class="search-box">
-                        <input type="text" placeholder="Search reports...">
-                        <button><i class="fas fa-search"></i></button>
+                        <input type="text" id="search-input" placeholder="Search reports...">
+                        <button id="search-btn"><i class="fas fa-search"></i></button>
                     </div>
                     <div class="filter-dropdown">
-                        <select>
+                        <select id="category-filter">
                             <option value="">Filter by Category</option>
                             <option value="land">Land & Property</option>
                             <option value="governance">Governance</option>
                             <option value="finance">Finance & Economy</option>
                             <option value="human-rights">Human Rights</option>
                             <option value="elections">Elections</option>
+                            <option value="judicial">Judicial</option>
+                            <option value="security">Security</option>
+                            <option value="economic">Economic</option>
+                            <option value="bipartisan">Bipartisan</option>
+                            <option value="reconciliation">Reconciliation</option>
                         </select>
                     </div>
                 </div>
             </header>
 
-            <section class="reports-grid">
-                <!-- NADCO Report Card - Newest -->
-                <article class="report-card">
-                    <div class="card-badge">
-                        <i class="fas fa-handshake"></i>
-                        Bipartisan Report
-                    </div>
-                    <div class="card-content">
-                        <h2>NADCO Report (2023)</h2>
-                        <p class="card-excerpt">Findings and recommendations from the National Dialogue Committee on political and economic reforms.</p>
-                        <div class="card-meta">
-                            <span><i class="fas fa-calendar-alt"></i> 2023</span>
-                            <span><i class="fas fa-file-pdf"></i> 132 pages</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="nadco.html" class="card-link">View Report <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <!-- Judiciary Transformation Report -->
-                <article class="report-card">
-                    <div class="card-badge">
-                        <i class="fas fa-balance-scale"></i>
-                        Judicial Report
-                    </div>
-                    <div class="card-content">
-                        <h2>Judiciary Transformation Report (2016)</h2>
-                        <p class="card-excerpt">Comprehensive reforms for Kenya's judiciary system under Chief Justice Willy Mutunga.</p>
-                        <div class="card-meta">
-                            <span><i class="fas fa-calendar-alt"></i> 2016</span>
-                            <span><i class="fas fa-file-pdf"></i> 210 pages</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="judiciary.html" class="card-link">View Report <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <!-- TJRC Report -->
-                <article class="report-card">
-                    <div class="card-badge">
-                        <i class="fas fa-handshake"></i>
-                        Reconciliation
-                    </div>
-                    <div class="card-content">
-                        <h2>Truth, Justice & Reconciliation Report (2013)</h2>
-                        <p class="card-excerpt">Findings on historical injustices from 1963-2008, chaired by Bethuel Kiplagat.</p>
-                        <div class="card-meta">
-                            <span><i class="fas fa-calendar-alt"></i> 2013</span>
-                            <span><i class="fas fa-file-pdf"></i> 480 pages</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="tjrc.html" class="card-link">View Report <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <!-- Waki Report -->
-                <article class="report-card">
-                    <div class="card-badge">
-                        <i class="fas fa-shield-alt"></i>
-                        Security Report
-                    </div>
-                    <div class="card-content">
-                        <h2>Waki Report (2008)</h2>
-                        <p class="card-excerpt">Investigation into the 2007-2008 post-election violence and recommendations.</p>
-                        <div class="card-meta">
-                            <span><i class="fas fa-calendar-alt"></i> 2008</span>
-                            <span><i class="fas fa-file-pdf"></i> 210 pages</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="waki.html" class="card-link">View Report <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <!-- Kriegler Report -->
-                <article class="report-card">
-                    <div class="card-badge">
-                        <i class="fas fa-vote-yea"></i>
-                        Election Report
-                    </div>
-                    <div class="card-content">
-                        <h2>Kriegler Commission Report (2008)</h2>
-                        <p class="card-excerpt">Investigation into the 2007 post-election violence and electoral system failures.</p>
-                        <div class="card-meta">
-                            <span><i class="fas fa-calendar-alt"></i> 2008</span>
-                            <span><i class="fas fa-file-pdf"></i> 156 pages</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="kriegler.html" class="card-link">View Report <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <!-- Ndungu Land Report -->
-                <article class="report-card">
-                    <div class="card-badge">
-                        <i class="fas fa-gavel"></i>
-                        Judicial Report
-                    </div>
-                    <div class="card-content">
-                        <h2>Ndungu Land Report (2004)</h2>
-                        <p class="card-excerpt">Investigation into illegal/irregular allocation of public land between 1963-2002.</p>
-                        <div class="card-meta">
-                            <span><i class="fas fa-calendar-alt"></i> 2004</span>
-                            <span><i class="fas fa-file-pdf"></i> 342 pages</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="ndungu.html" class="card-link">View Report <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <!-- Economic Recovery Strategy - Oldest -->
-                <article class="report-card">
-                    <div class="card-badge">
-                        <i class="fas fa-chart-line"></i>
-                        Economic Report
-                    </div>
-                    <div class="card-content">
-                        <h2>Economic Recovery Strategy (2003)</h2>
-                        <p class="card-excerpt">Blueprint for economic recovery after the 2002 transition under President Kibaki.</p>
-                        <div class="card-meta">
-                            <span><i class="fas fa-calendar-alt"></i> 2003</span>
-                            <span><i class="fas fa-file-pdf"></i> 98 pages</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="ers.html" class="card-link">View Report <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
+            <section class="reports-grid" id="reports-container">
+                <!-- Reports will be dynamically populated here -->
             </section>
 
             <div class="pagination">
-                <a href="#" class="page-link disabled"><i class="fas fa-chevron-left"></i> Previous</a>
-                <a href="#" class="page-link active">1</a>
-                <a href="#" class="page-link">2</a>
-                <a href="#" class="page-link">3</a>
-                <span class="page-dots">...</span>
-                <a href="#" class="page-link">8</a>
-                <a href="#" class="page-link">Next <i class="fas fa-chevron-right"></i></a>
+                <a href="#" class="page-link disabled" id="prev-page"><i class="fas fa-chevron-left"></i> Previous</a>
+                <div id="page-numbers"></div>
+                <a href="#" class="page-link" id="next-page">Next <i class="fas fa-chevron-right"></i></a>
             </div>
         </div>
     </main>
@@ -270,7 +140,286 @@
         // Set current year in footer
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Initialize reports
+            initializeReports();
+            
+            // Set up event listeners
+            setupEventListeners();
         });
+
+        // Reports data
+        const reportsData = [
+            {
+                id: 'nadco',
+                title: 'NADCO Report (2023)',
+                excerpt: 'Findings and recommendations from the National Dialogue Committee on political and economic reforms.',
+                year: '2023',
+                pages: '132',
+                category: 'bipartisan',
+                icon: 'handshake',
+                badgeText: 'Bipartisan Report',
+                link: 'nadco.html'
+            },
+            {
+                id: 'judiciary',
+                title: 'Judiciary Transformation Report (2016)',
+                excerpt: 'Comprehensive reforms for Kenya\'s judiciary system under Chief Justice Willy Mutunga.',
+                year: '2016',
+                pages: '210',
+                category: 'judicial',
+                icon: 'balance-scale',
+                badgeText: 'Judicial Report',
+                link: 'judiciary.html'
+            },
+            {
+                id: 'tjrc',
+                title: 'Truth, Justice & Reconciliation Report (2013)',
+                excerpt: 'Findings on historical injustices from 1963-2008, chaired by Bethuel Kiplagat.',
+                year: '2013',
+                pages: '480',
+                category: 'reconciliation',
+                icon: 'handshake',
+                badgeText: 'Reconciliation',
+                link: 'tjrc.html'
+            },
+            {
+                id: 'waki',
+                title: 'Waki Report (2008)',
+                excerpt: 'Investigation into the 2007-2008 post-election violence and recommendations.',
+                year: '2008',
+                pages: '210',
+                category: 'security',
+                icon: 'shield-alt',
+                badgeText: 'Security Report',
+                link: 'waki.html'
+            },
+            {
+                id: 'kriegler',
+                title: 'Kriegler Commission Report (2008)',
+                excerpt: 'Investigation into the 2007 post-election violence and electoral system failures.',
+                year: '2008',
+                pages: '156',
+                category: 'elections',
+                icon: 'vote-yea',
+                badgeText: 'Election Report',
+                link: 'kriegler.html'
+            },
+            {
+                id: 'ndungu',
+                title: 'Ndungu Land Report (2004)',
+                excerpt: 'Investigation into illegal/irregular allocation of public land between 1963-2002.',
+                year: '2004',
+                pages: '342',
+                category: 'land',
+                icon: 'gavel',
+                badgeText: 'Judicial Report',
+                link: 'ndungu.html'
+            },
+            {
+                id: 'ers',
+                title: 'Economic Recovery Strategy (2003)',
+                excerpt: 'Blueprint for economic recovery after the 2002 transition under President Kibaki.',
+                year: '2003',
+                pages: '98',
+                category: 'economic',
+                icon: 'chart-line',
+                badgeText: 'Economic Report',
+                link: 'ers.html'
+            }
+        ];
+
+        // Pagination variables
+        let currentPage = 1;
+        const reportsPerPage = 6;
+        let filteredReports = [...reportsData];
+
+        // Initialize reports
+        function initializeReports() {
+            displayReports(filteredReports);
+            renderPagination();
+        }
+
+        // Display reports
+        function displayReports(reports) {
+            const container = document.getElementById('reports-container');
+            container.innerHTML = '';
+
+            // Calculate pagination
+            const startIndex = (currentPage - 1) * reportsPerPage;
+            const endIndex = startIndex + reportsPerPage;
+            const paginatedReports = reports.slice(startIndex, endIndex);
+
+            if (paginatedReports.length === 0) {
+                container.innerHTML = '<div class="no-results"><i class="fas fa-search"></i><p>No reports found matching your criteria</p></div>';
+                return;
+            }
+
+            paginatedReports.forEach(report => {
+                const reportCard = document.createElement('article');
+                reportCard.className = 'report-card';
+                reportCard.dataset.id = report.id;
+                reportCard.dataset.category = report.category;
+
+                reportCard.innerHTML = `
+                    <div class="card-badge">
+                        <i class="fas fa-${report.icon}"></i>
+                        ${report.badgeText}
+                    </div>
+                    <div class="card-content">
+                        <h2>${report.title}</h2>
+                        <p class="card-excerpt">${report.excerpt}</p>
+                        <div class="card-meta">
+                            <span><i class="fas fa-calendar-alt"></i> ${report.year}</span>
+                            <span><i class="fas fa-file-pdf"></i> ${report.pages} pages</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="${report.link}" class="card-link">View Report <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                `;
+
+                container.appendChild(reportCard);
+            });
+        }
+
+        // Render pagination
+        function renderPagination() {
+            const totalPages = Math.ceil(filteredReports.length / reportsPerPage);
+            const pageNumbersContainer = document.getElementById('page-numbers');
+            pageNumbersContainer.innerHTML = '';
+
+            // Previous button
+            document.getElementById('prev-page').classList.toggle('disabled', currentPage === 1);
+
+            // Page numbers
+            for (let i = 1; i <= totalPages; i++) {
+                const pageLink = document.createElement('a');
+                pageLink.href = '#';
+                pageLink.className = 'page-link';
+                if (i === currentPage) pageLink.classList.add('active');
+                pageLink.textContent = i;
+                pageLink.dataset.page = i;
+                pageLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentPage = parseInt(e.target.dataset.page);
+                    displayReports(filteredReports);
+                    renderPagination();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+                pageNumbersContainer.appendChild(pageLink);
+            }
+
+            // Next button
+            document.getElementById('next-page').classList.toggle('disabled', currentPage === totalPages);
+        }
+
+        // Filter reports by search term
+        function filterReports(searchTerm = '', category = '') {
+            currentPage = 1; // Reset to first page when filtering
+            
+            filteredReports = reportsData.filter(report => {
+                const matchesSearch = 
+                    report.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    report.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    report.badgeText.toLowerCase().includes(searchTerm.toLowerCase());
+                
+                const matchesCategory = category === '' || report.category === category;
+                
+                return matchesSearch && matchesCategory;
+            });
+
+            displayReports(filteredReports);
+            renderPagination();
+        }
+
+        // Set up event listeners
+        function setupEventListeners() {
+            // Search functionality
+            const searchInput = document.getElementById('search-input');
+            const searchBtn = document.getElementById('search-btn');
+            
+            searchBtn.addEventListener('click', () => {
+                const searchTerm = searchInput.value.trim();
+                const category = document.getElementById('category-filter').value;
+                filterReports(searchTerm, category);
+            });
+            
+            searchInput.addEventListener('keyup', (e) => {
+                if (e.key === 'Enter') {
+                    const searchTerm = searchInput.value.trim();
+                    const category = document.getElementById('category-filter').value;
+                    filterReports(searchTerm, category);
+                }
+            });
+
+            // Category filter
+            document.getElementById('category-filter').addEventListener('change', (e) => {
+                const category = e.target.value;
+                const searchTerm = searchInput.value.trim();
+                filterReports(searchTerm, category);
+            });
+
+            // Pagination buttons
+            document.getElementById('prev-page').addEventListener('click', (e) => {
+                e.preventDefault();
+                if (currentPage > 1) {
+                    currentPage--;
+                    displayReports(filteredReports);
+                    renderPagination();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+
+            document.getElementById('next-page').addEventListener('click', (e) => {
+                e.preventDefault();
+                const totalPages = Math.ceil(filteredReports.length / reportsPerPage);
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    displayReports(filteredReports);
+                    renderPagination();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        }
     </script>
+
+    <style>
+        /* Additional styles for search and filter functionality */
+        .no-results {
+            text-align: center;
+            grid-column: 1 / -1;
+            padding: var(--space-xl);
+            color: var(--text-secondary);
+        }
+        
+        .no-results i {
+            font-size: 3rem;
+            margin-bottom: var(--space-md);
+            color: var(--text-light);
+        }
+        
+        #page-numbers {
+            display: flex;
+            gap: var(--space-xs);
+        }
+        
+        .page-link.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        
+        .search-box button {
+            transition: background-color var(--transition-fast);
+        }
+        
+        .search-box button:hover {
+            background-color: var(--primary-light);
+        }
+        
+        #category-filter {
+            cursor: pointer;
+        }
+    </style>
 </body>
 </html>
