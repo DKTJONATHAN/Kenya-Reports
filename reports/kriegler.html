@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kriegler Report (2008) | Kenya Reports Archive</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <meta name="description" content="Detailed analysis of Kenya's Kriegler Report on 2007/08 election failures">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="progress-bar"></div>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-archive"></i>
+                    <span class="site-title">Kenya Reports Archive</span>
+                </a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../reports/">Reports</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <button class="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="report-container">
+        <article class="report-content">
+            <!-- Report Header -->
+            <header class="report-header">
+                <div class="report-badge">
+                    <i class="fas fa-vote-yea"></i>
+                    Independent Review Commission
+                </div>
+                <h1>Kriegler Report (2008)</h1>
+                <div class="report-meta">
+                    <span><i class="fas fa-calendar-alt"></i> Released: September 2008</span>
+                    <span><i class="fas fa-file-pdf"></i> 156 pages</span>
+                    <span><i class="fas fa-user-tie"></i> Independent Review Commission on General Elections</span>
+                </div>
+            </header>
+
+            <!-- Executive Summary -->
+            <section class="report-section">
+                <h2><i class="fas fa-file-alt"></i> Executive Summary</h2>
+                <p>The Kriegler Report, officially titled <em>"Report of the Independent Review Commission on the General Elections Held in Kenya on 27 December 2007"</em>, was established under the National Accord following the 2007/08 post-election violence. Chaired by South African judge Johann Kriegler, the commission conducted a forensic examination of Kenya's electoral systems.</p>
+                
+                <div class="key-findings">
+                    <h3>Core Mandate:</h3>
+                    <ul>
+                        <li>Investigate all aspects of 2007 general elections</li>
+                        <li>Identify systemic weaknesses and failures</li>
+                        <li>Determine causes of electoral violence</li>
+                        <li>Recommend comprehensive electoral reforms</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Key Findings -->
+            <section class="report-section">
+                <h2><i class="fas fa-search"></i> Key Findings</h2>
+                
+                <div class="chart-grid">
+                    <div class="chart-container">
+                        <canvas id="electionFailuresChart"></canvas>
+                        <p class="chart-caption">Fig 1: Severity of electoral system failures (Source: Kriegler Report, p.42)</p>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <canvas id="violenceImpactChart"></canvas>
+                        <p class="chart-caption">Fig 2: Post-election violence impact (Source: KNCHR data)</p>
+                    </div>
+                </div>
+                
+                <div class="findings-list">
+                    <div class="finding-card critical">
+                        <h3>1. Electoral System Collapse</h3>
+                        <p>The commission found <strong>catastrophic failures</strong> across all electoral processes:</p>
+                        <ul>
+                            <li>Voter register contained 1.2 million ineligible voters</li>
+                            <li>Electronic results transmission system completely failed</li>
+                            <li>35% of polling stations had compromised ballot security</li>
+                            <li>Presidential results were altered at 5 constituency tally centers</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="finding-card">
+                        <h3>2. Institutional Failures</h3>
+                        <p>Structural deficiencies in electoral governance:</p>
+                        <ul>
+                            <li>Electoral Commission of Kenya (ECK) was politically compromised</li>
+                            <li>Lack of transparency in vote tallying process</li>
+                            <li>Inadequate staff training (60% of officials untrained)</li>
+                            <li>No effective mechanism for dispute resolution</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="finding-card">
+                        <h3>3. Violence Triggers</h3>
+                        <p>Key factors that escalated electoral dispute into violence:</p>
+                        <ul>
+                            <li>Politicians mobilized ethnic militia groups</li>
+                            <li>Security forces used excessive force (405 killed by police)</li>
+                            <li>Media fueled tensions through partisan reporting</li>
+                            <li>Historical land grievances exploited for mobilization</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recommendations -->
+            <section class="report-section">
+                <h2><i class="fas fa-bullseye"></i> Key Recommendations</h2>
+                
+                <div class="recommendations-grid">
+                    <div class="recommendation-card urgent">
+                        <div class="rec-number">01</div>
+                        <h3>New Electoral Body</h3>
+                        <p>Immediate dissolution of ECK and creation of independent professional body (led to IEBC establishment)</p>
+                    </div>
+                    
+                    <div class="recommendation-card">
+                        <div class="rec-number">02</div>
+                        <h3>Voter Register Overhaul</h3>
+                        <p>Complete biometric voter registration system with regular audits</p>
+                    </div>
+                    
+                    <div class="recommendation-card urgent">
+                        <div class="rec-number">03</div>
+                        <h3>Legal Framework</h3>
+                        <p>New elections law to prevent presidential vote manipulation</p>
+                    </div>
+                    
+                    <div class="recommendation-card">
+                        <div class="rec-number">04</div>
+                        <h3>Technology Systems</h3>
+                        <p>Robust electronic results transmission with paper trail</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Implementation Status -->
+            <section class="report-section status-section">
+                <h2><i class="fas fa-tasks"></i> Implementation Status (2023 Update)</h2>
+                
+                <div class="status-chart">
+                    <canvas id="implementationChart"></canvas>
+                </div>
+                
+                <div class="status-key">
+                    <div class="key-item">
+                        <span class="key-dot not-started"></span>
+                        <span>Not Implemented (25%)</span>
+                    </div>
+                    <div class="key-item">
+                        <span class="key-dot partial"></span>
+                        <span>Partial (50%)</span>
+                    </div>
+                    <div class="key-item">
+                        <span class="key-dot complete"></span>
+                        <span>Complete (25%)</span>
+                    </div>
+                </div>
+                
+                <div class="status-details">
+                    <h3>Notable Developments:</h3>
+                    <ul>
+                        <li><strong>Complete:</strong> IEBC established in 2011 to replace ECK</li>
+                        <li><strong>Partial:</strong> Biometric voter registration introduced but with challenges</li>
+                        <li><strong>Partial:</strong> Elections Act 2011 passed but amendments weakened reforms</li>
+                        <li><strong>Not Implemented:</strong> No effective punishment for electoral offenses</li>
+                    </ul>
+                    
+                    <div class="source-box">
+                        <p><strong>Sources:</strong> IEBC Annual Reports (2022), Kenya Human Rights Commission Election Audit (2022)</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Download Section -->
+            <section class="report-download">
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h2>Download Full Report</h2>
+                    <p>Access the complete Kriegler Report from the official repository:</p>
+                    <a href="https://www.kenyalaw.org/kl/fileadmin/pdfdownloads/Reports/Kriegler_Report.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-download"></i> Download PDF (2.1MB)
+                    </a>
+                    <div class="file-details">
+                        <p><strong>Original Source:</strong> Kenya Law Reports</p>
+                        <p><strong>Direct Link:</strong> <small>kenyalaw.org/kl/fileadmin/pdfdownloads/Reports/</small></p>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="site-footer" id="contact">
+        <!-- Same footer as Ndungu template -->
+    </footer>
+
+    <nav class="bottom-nav">
+        <!-- Same bottom nav as Ndungu template -->
+    </nav>
+
+    <script>
+        // Chart.js Implementation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Election Failures Chart
+            const failuresCtx = document.getElementById('electionFailuresChart').getContext('2d');
+            new Chart(failuresCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['Voter Register', 'Result Transmission', 'Staff Competence', 'Ballot Security', 'Tally Integrity', 'Dispute Resolution'],
+                    datasets: [{
+                        label: 'System Failure Severity',
+                        data: [85, 95, 70, 65, 80, 90],
+                        backgroundColor: 'rgba(231, 76, 60, 0.5)',
+                        borderColor: 'rgba(231, 76, 60, 1)',
+                        pointBackgroundColor: 'rgba(231, 76, 60, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(231, 76, 60, 1)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        r: {
+                            angleLines: { display: true },
+                            suggestedMin: 0,
+                            suggestedMax: 100
+                        }
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Electoral System Failure Analysis'
+                        }
+                    }
+                }
+            });
+
+            // Violence Impact Chart
+            const violenceCtx = document.getElementById('violenceImpactChart').getContext('2d');
+            new Chart(violenceCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Deaths', 'Injured', 'Displaced', 'Properties Destroyed'],
+                    datasets: [{
+                        label: 'PEV Impact Scale',
+                        data: [1133, 3500, 650000, 117216],
+                        backgroundColor: [
+                            'rgba(192, 57, 43, 0.7)',
+                            'rgba(211, 84, 0, 0.7)',
+                            'rgba(243, 156, 18, 0.7)',
+                            'rgba(142, 68, 173, 0.7)'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Post-Election Violence Impact'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            type: 'logarithmic',
+                            title: {
+                                display: true,
+                                text: 'Logarithmic Scale'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Implementation Status Chart
+            const implementationCtx = document.getElementById('implementationChart').getContext('2d');
+            new Chart(implementationCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Not Implemented', 'Partial Implementation', 'Fully Implemented'],
+                    datasets: [{
+                        data: [25, 50, 25],
+                        backgroundColor: [
+                            'rgba(231, 76, 60, 0.7)',
+                            'rgba(241, 196, 15, 0.7)',
+                            'rgba(39, 174, 96, 0.7)'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Recommendation Implementation Status (2023)'
+                        }
+                    }
+                }
+            });
+
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
