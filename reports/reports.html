@@ -1,105 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Previous head content remains the same -->
-</head>
-<body>
-    <!-- Previous HTML structure remains the same until the search-filter div -->
-    
-    <div class="search-filter">
-        <div class="search-box">
-            <input type="text" id="search-input" placeholder="Search reports...">
-            <button id="search-btn"><i class="fas fa-search"></i></button>
-            <button id="clear-search" class="clear-btn" title="Clear search">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="filter-dropdown">
-            <select id="category-filter">
-                <option value="">All Categories</option>
-                <option value="land">Land & Property</option>
-                <option value="governance">Governance</option>
-                <option value="finance">Finance & Economy</option>
-                <option value="human-rights">Human Rights</option>
-                <option value="elections">Elections</option>
-                <option value="judicial">Judicial</option>
-                <option value="security">Security</option>
-                <option value="economic">Economic</option>
-                <option value="bipartisan">Bipartisan</option>
-                <option value="reconciliation">Reconciliation</option>
-            </select>
-        </div>
-    </div>
-
-    <!-- Rest of the HTML remains the same -->
-
-    <script>
-        // Previous JavaScript remains the same until the setupEventListeners function
-
-        // Set up event listeners
-        function setupEventListeners() {
-            // Search functionality
-            const searchInput = document.getElementById('search-input');
-            const searchBtn = document.getElementById('search-btn');
-            const clearSearchBtn = document.getElementById('clear-search');
-            const categoryFilter = document.getElementById('category-filter');
-            
-            searchBtn.addEventListener('click', () => {
-                const searchTerm = searchInput.value.trim();
-                const category = categoryFilter.value;
-                filterReports(searchTerm, category);
-                
-                // Show clear button if there's a search term or category filter
-                if (searchTerm || category) {
-                    clearSearchBtn.style.display = 'flex';
-                }
-            });
-            
-            searchInput.addEventListener('keyup', (e) => {
-                if (e.key === 'Enter') {
-                    const searchTerm = searchInput.value.trim();
-                    const category = categoryFilter.value;
-                    filterReports(searchTerm, category);
-                    
-                    if (searchTerm || category) {
-                        clearSearchBtn.style.display = 'flex';
-                    }
-                }
-            });
-
-            // Clear search functionality
-            clearSearchBtn.addEventListener('click', () => {
-                searchInput.value = '';
-                categoryFilter.value = '';
-                filterReports('', '');
-                clearSearchBtn.style.display = 'none';
-            });
-
-            // Category filter
-            categoryFilter.addEventListener('change', (e) => {
-                const category = e.target.value;
-                const searchTerm = searchInput.value.trim();
-                filterReports(searchTerm, category);
-                
-                if (searchTerm || category) {
-                    clearSearchBtn.style.display = 'flex';
-                } else {
-                    clearSearchBtn.style.display = 'none';
-                }
-            });
-
-            // Rest of the event listeners remain the same
-        }
-
-        // Rest of the JavaScript remains the same
-    </script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports Archive | Kenya Reports Archive</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <meta name="description" content="Browse all official government reports in the Kenya Reports Archive">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Additional styles for clear button */
+        /* Additional styles for search and filter functionality */
+        .no-results {
+            text-align: center;
+            grid-column: 1 / -1;
+            padding: var(--space-xl);
+            color: var(--text-secondary);
+        }
+        
+        .no-results i {
+            font-size: 3rem;
+            margin-bottom: var(--space-md);
+            color: var(--text-light);
+        }
+        
+        #page-numbers {
+            display: flex;
+            gap: var(--space-xs);
+        }
+        
+        .page-link.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        
         .search-box {
             position: relative;
             display: flex;
-            align-items: center;
+            flex: 1;
+        }
+        
+        .search-box button {
+            transition: background-color var(--transition-fast);
+        }
+        
+        .search-box button:hover {
+            background-color: var(--primary-light);
+        }
+        
+        #category-filter {
+            cursor: pointer;
         }
         
         .clear-btn {
@@ -128,9 +79,411 @@
         
         #search-input {
             padding-right: 60px;
+            width: 100%;
         }
         
-        /* Rest of the CSS remains the same */
+        .search-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
     </style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-archive"></i>
+                    <span class="site-title">Kenya Reports Archive</span>
+                </a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="reports.html" class="active">Reports</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <button class="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="reports-archive">
+        <div class="container">
+            <header class="archive-header">
+                <h1><i class="fas fa-book-open"></i> Reports Archive</h1>
+                <p>Browse through our collection of official government reports and commission findings</p>
+
+                <div class="search-filter">
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="Search reports...">
+                        <button id="clear-search" class="clear-btn" title="Clear search">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <button id="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="filter-dropdown">
+                        <select id="category-filter">
+                            <option value="">All Categories</option>
+                            <option value="land">Land & Property</option>
+                            <option value="governance">Governance</option>
+                            <option value="finance">Finance & Economy</option>
+                            <option value="human-rights">Human Rights</option>
+                            <option value="elections">Elections</option>
+                            <option value="judicial">Judicial</option>
+                            <option value="security">Security</option>
+                            <option value="economic">Economic</option>
+                            <option value="bipartisan">Bipartisan</option>
+                            <option value="reconciliation">Reconciliation</option>
+                        </select>
+                    </div>
+                </div>
+            </header>
+
+            <section class="reports-grid" id="reports-container">
+                <!-- Reports will be dynamically populated here -->
+            </section>
+
+            <div class="pagination">
+                <a href="#" class="page-link disabled" id="prev-page"><i class="fas fa-chevron-left"></i> Previous</a>
+                <div id="page-numbers"></div>
+                <a href="#" class="page-link" id="next-page">Next <i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-archive"></i>
+                        <span>Kenya Reports Archive</span>
+                    </div>
+                    <p>Preserving Kenya's unimplemented reform documents for public access and accountability.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="reports.html">Reports</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="https://twitter.com/maestropuns" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://facebook.com/maestropuns" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Kenya Reports Archive. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="bottom-nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="reports.html" class="bottom-nav-item active">
+            <i class="fas fa-book-open"></i>
+            <span>Reports</span>
+        </a>
+        <a href="../about.html" class="bottom-nav-item">
+            <i class="fas fa-info-circle"></i>
+            <span>About</span>
+        </a>
+        <a href="#contact" class="bottom-nav-item">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+    </nav>
+
+    <script>
+        // Reports data
+        const reportsData = [
+            {
+                id: 'nadco',
+                title: 'NADCO Report (2023)',
+                excerpt: 'Findings and recommendations from the National Dialogue Committee on political and economic reforms.',
+                year: '2023',
+                pages: '132',
+                category: 'bipartisan',
+                icon: 'handshake',
+                badgeText: 'Bipartisan Report',
+                link: 'nadco.html'
+            },
+            {
+                id: 'judiciary',
+                title: 'Judiciary Transformation Report (2016)',
+                excerpt: 'Comprehensive reforms for Kenya\'s judiciary system under Chief Justice Willy Mutunga.',
+                year: '2016',
+                pages: '210',
+                category: 'judicial',
+                icon: 'balance-scale',
+                badgeText: 'Judicial Report',
+                link: 'judiciary.html'
+            },
+            {
+                id: 'tjrc',
+                title: 'Truth, Justice & Reconciliation Report (2013)',
+                excerpt: 'Findings on historical injustices from 1963-2008, chaired by Bethuel Kiplagat.',
+                year: '2013',
+                pages: '480',
+                category: 'reconciliation',
+                icon: 'handshake',
+                badgeText: 'Reconciliation',
+                link: 'tjrc.html'
+            },
+            {
+                id: 'waki',
+                title: 'Waki Report (2008)',
+                excerpt: 'Investigation into the 2007-2008 post-election violence and recommendations.',
+                year: '2008',
+                pages: '210',
+                category: 'security',
+                icon: 'shield-alt',
+                badgeText: 'Security Report',
+                link: 'waki.html'
+            },
+            {
+                id: 'kriegler',
+                title: 'Kriegler Commission Report (2008)',
+                excerpt: 'Investigation into the 2007 post-election violence and electoral system failures.',
+                year: '2008',
+                pages: '156',
+                category: 'elections',
+                icon: 'vote-yea',
+                badgeText: 'Election Report',
+                link: 'kriegler.html'
+            },
+            {
+                id: 'ndungu',
+                title: 'Ndungu Land Report (2004)',
+                excerpt: 'Investigation into illegal/irregular allocation of public land between 1963-2002.',
+                year: '2004',
+                pages: '342',
+                category: 'land',
+                icon: 'gavel',
+                badgeText: 'Judicial Report',
+                link: 'ndungu.html'
+            },
+            {
+                id: 'ers',
+                title: 'Economic Recovery Strategy (2003)',
+                excerpt: 'Blueprint for economic recovery after the 2002 transition under President Kibaki.',
+                year: '2003',
+                pages: '98',
+                category: 'economic',
+                icon: 'chart-line',
+                badgeText: 'Economic Report',
+                link: 'ers.html'
+            }
+        ];
+
+        // Pagination variables
+        let currentPage = 1;
+        const reportsPerPage = 6;
+        let filteredReports = [...reportsData];
+
+        // Initialize reports when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Initialize reports
+            displayReports(filteredReports);
+            renderPagination();
+            
+            // Set up event listeners
+            setupEventListeners();
+        });
+
+        // Display reports
+        function displayReports(reports) {
+            const container = document.getElementById('reports-container');
+            container.innerHTML = '';
+
+            // Calculate pagination
+            const startIndex = (currentPage - 1) * reportsPerPage;
+            const endIndex = startIndex + reportsPerPage;
+            const paginatedReports = reports.slice(startIndex, endIndex);
+
+            if (paginatedReports.length === 0) {
+                container.innerHTML = '<div class="no-results"><i class="fas fa-search"></i><p>No reports found matching your criteria</p></div>';
+                return;
+            }
+
+            paginatedReports.forEach(report => {
+                const reportCard = document.createElement('article');
+                reportCard.className = 'report-card';
+                reportCard.dataset.id = report.id;
+                reportCard.dataset.category = report.category;
+
+                reportCard.innerHTML = `
+                    <div class="card-badge">
+                        <i class="fas fa-${report.icon}"></i>
+                        ${report.badgeText}
+                    </div>
+                    <div class="card-content">
+                        <h2>${report.title}</h2>
+                        <p class="card-excerpt">${report.excerpt}</p>
+                        <div class="card-meta">
+                            <span><i class="fas fa-calendar-alt"></i> ${report.year}</span>
+                            <span><i class="fas fa-file-pdf"></i> ${report.pages} pages</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="${report.link}" class="card-link">View Report <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                `;
+
+                container.appendChild(reportCard);
+            });
+        }
+
+        // Render pagination
+        function renderPagination() {
+            const totalPages = Math.ceil(filteredReports.length / reportsPerPage);
+            const pageNumbersContainer = document.getElementById('page-numbers');
+            pageNumbersContainer.innerHTML = '';
+
+            // Previous button
+            document.getElementById('prev-page').classList.toggle('disabled', currentPage === 1);
+
+            // Page numbers
+            for (let i = 1; i <= totalPages; i++) {
+                const pageLink = document.createElement('a');
+                pageLink.href = '#';
+                pageLink.className = 'page-link';
+                if (i === currentPage) pageLink.classList.add('active');
+                pageLink.textContent = i;
+                pageLink.dataset.page = i;
+                pageLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentPage = parseInt(e.target.dataset.page);
+                    displayReports(filteredReports);
+                    renderPagination();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+                pageNumbersContainer.appendChild(pageLink);
+            }
+
+            // Next button
+            document.getElementById('next-page').classList.toggle('disabled', currentPage === totalPages);
+        }
+
+        // Filter reports by search term and category
+        function filterReports(searchTerm = '', category = '') {
+            currentPage = 1; // Reset to first page when filtering
+            
+            filteredReports = reportsData.filter(report => {
+                const matchesSearch = 
+                    report.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    report.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    report.badgeText.toLowerCase().includes(searchTerm.toLowerCase());
+                
+                const matchesCategory = category === '' || report.category === category;
+                
+                return matchesSearch && matchesCategory;
+            });
+
+            displayReports(filteredReports);
+            renderPagination();
+        }
+
+        // Set up event listeners
+        function setupEventListeners() {
+            const searchInput = document.getElementById('search-input');
+            const searchBtn = document.getElementById('search-btn');
+            const clearSearchBtn = document.getElementById('clear-search');
+            const categoryFilter = document.getElementById('category-filter');
+            
+            // Search functionality
+            searchBtn.addEventListener('click', () => {
+                const searchTerm = searchInput.value.trim();
+                const category = categoryFilter.value;
+                filterReports(searchTerm, category);
+                updateClearButtonVisibility(searchTerm, category);
+            });
+            
+            // Search on Enter key
+            searchInput.addEventListener('keyup', (e) => {
+                if (e.key === 'Enter') {
+                    const searchTerm = searchInput.value.trim();
+                    const category = categoryFilter.value;
+                    filterReports(searchTerm, category);
+                    updateClearButtonVisibility(searchTerm, category);
+                }
+            });
+
+            // Clear search functionality
+            clearSearchBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                categoryFilter.value = '';
+                filterReports('', '');
+                clearSearchBtn.style.display = 'none';
+            });
+
+            // Category filter change
+            categoryFilter.addEventListener('change', (e) => {
+                const category = e.target.value;
+                const searchTerm = searchInput.value.trim();
+                filterReports(searchTerm, category);
+                updateClearButtonVisibility(searchTerm, category);
+            });
+
+            // Pagination buttons
+            document.getElementById('prev-page').addEventListener('click', (e) => {
+                e.preventDefault();
+                if (currentPage > 1) {
+                    currentPage--;
+                    displayReports(filteredReports);
+                    renderPagination();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+
+            document.getElementById('next-page').addEventListener('click', (e) => {
+                e.preventDefault();
+                const totalPages = Math.ceil(filteredReports.length / reportsPerPage);
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    displayReports(filteredReports);
+                    renderPagination();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        }
+
+        // Update clear button visibility based on search/filter state
+        function updateClearButtonVisibility(searchTerm, category) {
+            const clearSearchBtn = document.getElementById('clear-search');
+            if (searchTerm || category) {
+                clearSearchBtn.style.display = 'flex';
+            } else {
+                clearSearchBtn.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
