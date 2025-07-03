@@ -1,1 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TJRC Report (2013) | Kenya Reports Archive</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <meta name="description" content="Comprehensive analysis of Kenya's TJRC Report on historical injustices">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="progress-bar"></div>
 
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-archive"></i>
+                    <span class="site-title">Kenya Reports Archive</span>
+                </a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../reports/">Reports</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <button class="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="report-container">
+        <article class="report-content">
+            <!-- Report Header -->
+            <header class="report-header">
+                <div class="report-badge">
+                    <i class="fas fa-scale-balanced"></i>
+                    Truth, Justice and Reconciliation Commission
+                </div>
+                <h1>TJRC Final Report (2013)</h1>
+                <div class="report-meta">
+                    <span><i class="fas fa-calendar-alt"></i> Released: May 2013</span>
+                    <span><i class="fas fa-file-pdf"></i> 2,300 pages (4 volumes)</span>
+                    <span><i class="fas fa-user-tie"></i> Chair: Bethuel Kiplagat</span>
+                </div>
+            </header>
+
+            <!-- Executive Summary -->
+            <section class="report-section">
+                <h2><i class="fas fa-file-alt"></i> Executive Summary</h2>
+                <p>The TJRC Report, officially titled <em>"Report of the Truth, Justice and Reconciliation Commission"</em>, was established under the TJRC Act of 2008 following the 2007/08 post-election violence. The commission investigated historical injustices from December 12, 1963 (independence) to February 28, 2008 (National Accord).</p>
+                
+                <div class="key-findings">
+                    <h3>Core Mandate:</h3>
+                    <ul>
+                        <li>Investigate gross human rights violations since independence</li>
+                        <li>Examine historical land injustices and illegal dispossession</li>
+                        <li>Document political violence and ethnic clashes</li>
+                        <li>Recommend reparations and institutional reforms</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Key Findings -->
+            <section class="report-section">
+                <h2><i class="fas fa-search"></i> Key Findings</h2>
+                
+                <div class="chart-grid">
+                    <div class="chart-container">
+                        <canvas id="violationsChart"></canvas>
+                        <p class="chart-caption">Fig 1: Documented human rights violations (Source: TJRC Vol.2A)</p>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <canvas id="landInjusticesChart"></canvas>
+                        <p class="chart-caption">Fig 2: Major land injustice cases (Source: TJRC Vol.3)</p>
+                    </div>
+                </div>
+                
+                <div class="findings-list">
+                    <div class="finding-card critical">
+                        <h3>1. Systematic Human Rights Violations</h3>
+                        <p>The commission documented <strong>widespread atrocities</strong>:</p>
+                        <ul>
+                            <li>Over 10,000 cases of torture by state security agencies</li>
+                            <li>400+ enforced disappearances (mostly during Moi era)</li>
+                            <li>Massacres in Wagalla (1984), Mt. Elgon (2006-08), and post-election violence</li>
+                            <li>Sexual violence as weapon during ethnic clashes</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="finding-card">
+                        <h3>2. Land Injustices</h3>
+                        <p>Structural land dispossession patterns:</p>
+                        <ul>
+                            <li>Illegal allocation of 1 million acres of public land</li>
+                            <li>Historical injustices in Rift Valley, Coast, and Central regions</li>
+                            <li>Sagana State House used as land grabbing center</li>
+                            <li>Over 300,000 IDPs from land-related conflicts</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="finding-card">
+                        <h3>3. Political Violence</h3>
+                        <p>Patterns of election-related violence:</p>
+                        <ul>
+                            <li>8 major episodes of election violence since 1969</li>
+                            <li>State-sponsored ethnic militia in 1990s clashes</li>
+                            <li>Politicians armed youth groups in 2007/08 violence</li>
+                            <li>Security forces participated in ethnic killings</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recommendations -->
+            <section class="report-section">
+                <h2><i class="fas fa-bullseye"></i> Key Recommendations</h2>
+                
+                <div class="recommendations-grid">
+                    <div class="recommendation-card urgent">
+                        <div class="rec-number">01</div>
+                        <h3>Reparations Program</h3>
+                        <p>Establish Sh10 billion fund for victims of historical injustices</p>
+                    </div>
+                    
+                    <div class="recommendation-card">
+                        <div class="rec-number">02</div>
+                        <h3>Land Reforms</h3>
+                        <p>Revoke illegally acquired titles and create historical land injustices tribunal</p>
+                    </div>
+                    
+                    <div class="recommendation-card urgent">
+                        <div class="rec-number">03</div>
+                        <h3>Vetting of Officials</h3>
+                        <p>Remove public officers implicated in human rights violations</p>
+                    </div>
+                    
+                    <div class="recommendation-card">
+                        <div class="rec-number">04</div>
+                        <h3>Memorialization</h3>
+                        <p>Build monuments and memorials at massacre sites</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Implementation Status -->
+            <section class="report-section status-section">
+                <h2><i class="fas fa-tasks"></i> Implementation Status (2023 Update)</h2>
+                
+                <div class="status-chart">
+                    <canvas id="tjrcImplementationChart"></canvas>
+                </div>
+                
+                <div class="status-key">
+                    <div class="key-item">
+                        <span class="key-dot not-started"></span>
+                        <span>Not Implemented (70%)</span>
+                    </div>
+                    <div class="key-item">
+                        <span class="key-dot partial"></span>
+                        <span>Partial (25%)</span>
+                    </div>
+                    <div class="key-item">
+                        <span class="key-dot complete"></span>
+                        <span>Complete (5%)</span>
+                    </div>
+                </div>
+                
+                <div class="status-details">
+                    <h3>Notable Developments:</h3>
+                    <ul>
+                        <li><strong>Complete:</strong> National Coroner's Service Act passed (2017)</li>
+                        <li><strong>Partial:</strong> Some land cases addressed through Ndung'u Report follow-up</li>
+                        <li><strong>Not Implemented:</strong> No comprehensive reparations program established</li>
+                        <li><strong>Not Implemented:</strong> No official apology for historical injustices</li>
+                    </ul>
+                    
+                    <div class="source-box">
+                        <p><strong>Sources:</strong> KNCHR Implementation Report (2021), Kenya Land Alliance Monitoring (2022)</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Download Section -->
+            <section class="report-download">
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h2>Download Full Report</h2>
+                    <p>Access the complete TJRC Report from the official repository:</p>
+                    <a href="https://www.tjrckenya.org/images/documents/TJRC_report_Volume_1.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-download"></i> Download Volume 1 (15MB)
+                    </a>
+                    <div class="file-details">
+                        <p><strong>Original Source:</strong> TJRC Kenya Archives</p>
+                        <p><strong>Full Set:</strong> <small>Vol 1 (Findings), Vol 2A (Violations), Vol 2B (Special Cases), Vol 3 (Land), Vol 4 (Recommendations)</small></p>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="site-footer" id="contact">
+        <!-- Same footer as Kriegler template -->
+    </footer>
+
+    <nav class="bottom-nav">
+        <!-- Same bottom nav as Kriegler template -->
+    </nav>
+
+    <script>
+        // Chart.js Implementation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Human Rights Violations Chart
+            const violationsCtx = document.getElementById('violationsChart').getContext('2d');
+            new Chart(violationsCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Torture', 'Extrajudicial Killings', 'Enforced Disappearances', 'Sexual Violence', 'Massacres'],
+                    datasets: [{
+                        label: 'Documented Cases (1963-2008)',
+                        data: [10245, 3289, 421, 1560, 28],
+                        backgroundColor: 'rgba(192, 57, 43, 0.7)',
+                        borderColor: 'rgba(192, 57, 43, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Documented Human Rights Violations'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Number of Cases'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Land Injustices Chart
+            const landCtx = document.getElementById('landInjusticesChart').getContext('2d');
+            new Chart(landCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['Coast Region', 'Rift Valley', 'Central Kenya', 'Western Kenya', 'Other Regions'],
+                    datasets: [{
+                        data: [38, 32, 15, 10, 5],
+                        backgroundColor: [
+                            'rgba(231, 76, 60, 0.7)',
+                            'rgba(241, 196, 15, 0.7)',
+                            'rgba(39, 174, 96, 0.7)',
+                            'rgba(142, 68, 173, 0.7)',
+                            'rgba(41, 128, 185, 0.7)'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Distribution of Land Injustice Cases by Region (%)'
+                        }
+                    }
+                }
+            });
+
+            // Implementation Status Chart
+            const tjrcImpCtx = document.getElementById('tjrcImplementationChart').getContext('2d');
+            new Chart(tjrcImpCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Not Implemented', 'Partial Implementation', 'Fully Implemented'],
+                    datasets: [{
+                        data: [70, 25, 5],
+                        backgroundColor: [
+                            'rgba(231, 76, 60, 0.7)',
+                            'rgba(241, 196, 15, 0.7)',
+                            'rgba(39, 174, 96, 0.7)'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'TJRC Recommendation Implementation (2023)'
+                        }
+                    }
+                }
+            });
+
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
