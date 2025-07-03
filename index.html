@@ -148,6 +148,49 @@
             transform: translateY(-5px);
             box-shadow: var(--shadow-md);
         }
+
+        /* Search results section */
+        .search-reports .report-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+
+        .search-reports .report-card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            padding: var(--space-lg);
+            transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+        }
+
+        .search-reports .report-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .page-link {
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--primary);
+            border: 1px solid #ddd;
+        }
+
+        .page-link.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
     </style>
 </head>
 <body>
@@ -448,6 +491,11 @@
             // Get 3 newest reports
             const featuredReports = sortedReports.slice(0, 3);
 
+            if (featuredReports.length === 0) {
+                container.innerHTML = '<p>No featured reports available</p>';
+                return;
+            }
+
             featuredReports.forEach(report => {
                 const reportCard = document.createElement('article');
                 reportCard.className = 'report-card';
@@ -460,47 +508,12 @@
                         ${report.badgeText}
                     </div>
                     <div class="card-content">
-                        <h2>${report.title}</h2>
-                        <p class="card-excerpt">${report.excerpt}</p>
+                        <h3>${report.title}</h3>
+                        <p>${report.excerpt}</p>
                         <div class="card-meta">
                             <span><i class="fas fa-calendar-alt"></i> ${report.year}</span>
                             <span><i class="fas fa-file-pdf"></i> ${report.pages} pages</span>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <a href="${report.link}" class="card-link">View Report <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                `;
-
-                container.appendChild(reportCard);
-            });
-        }
-
-        // Display search results
-        function displaySearchResults(reports) {
-            const container = document.getElementById('search-results-container');
-            container.innerHTML = '';
-
-            // Calculate pagination
-            const startIndex = (currentPage - 1) * reportsPerPage;
-            const endIndex = startIndex + reportsPerPage;
-            const paginatedReports = reports.slice(startIndex, endIndex);
-
-            if (paginatedReports.length === 0) {
-                container.innerHTML = '<div class="no-results"><i class="fas fa-search"></i><p>No reports found matching your criteria</p></div>';
-                return;
-            }
-
-            paginatedReports.forEach(report => {
-                const reportCard = document.createElement('article');
-                reportCard.className = 'report-card';
-                reportCard.dataset.id = report.id;
-                reportCard.dataset.category = report.category;
-
-                reportCard.innerHTML = `
-                    <div class="card-badge">
-                        <i class="fas fa-${report.icon}"></i>
-                        ${report.badgeText}
-                    </div>
-                    <div class="card-content">
-             
+                        <a href="${report.link}" class="card-link">View Report <i class="fas fa-arr
