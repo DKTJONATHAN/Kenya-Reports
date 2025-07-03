@@ -10,6 +10,124 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Additional styles for search and filter functionality */
+        .no-results {
+            text-align: center;
+            grid-column: 1 / -1;
+            padding: var(--space-xl);
+            color: var(--text-secondary);
+        }
+        
+        .no-results i {
+            font-size: 3rem;
+            margin-bottom: var(--space-md);
+            color: var(--text-light);
+        }
+        
+        #page-numbers {
+            display: flex;
+            gap: var(--space-xs);
+        }
+        
+        .page-link.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        
+        .search-box {
+            position: relative;
+            display: flex;
+            flex: 1;
+        }
+        
+        .search-box button {
+            transition: background-color var(--transition-fast);
+        }
+        
+        .search-box button:hover {
+            background-color: var(--primary-light);
+        }
+        
+        #category-filter {
+            cursor: pointer;
+        }
+        
+        .clear-btn {
+            position: absolute;
+            right: 45px;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            transition: color var(--transition-fast);
+        }
+        
+        .clear-btn:hover {
+            color: var(--secondary);
+        }
+        
+        .search-box button {
+            position: relative;
+            z-index: 1;
+        }
+        
+        #search-input {
+            padding-right: 60px;
+            width: 100%;
+        }
+        
+        .search-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            margin: var(--space-lg) 0;
+        }
+
+        .report-card .card-badge {
+            background-color: var(--primary-light);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .report-card .card-meta {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .report-card .card-meta i {
+            margin-right: 0.25rem;
+        }
+
+        .report-card .card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            color: var(--primary);
+            font-weight: 600;
+            transition: color var(--transition-fast);
+        }
+
+        .report-card .card-link:hover {
+            color: var(--primary-dark);
+        }
+    </style>
 </head>
 <body>
     <div class="progress-bar"></div>
@@ -60,14 +178,18 @@
         <section class="featured-reports">
             <div class="container">
                 <h2>Key Reports in Our Archive</h2>
+                
                 <div class="search-filter">
                     <div class="search-box">
                         <input type="text" id="search-input" placeholder="Search reports...">
+                        <button id="clear-search" class="clear-btn" title="Clear search">
+                            <i class="fas fa-times"></i>
+                        </button>
                         <button id="search-btn"><i class="fas fa-search"></i></button>
                     </div>
                     <div class="filter-dropdown">
                         <select id="category-filter">
-                            <option value="">Filter by Category</option>
+                            <option value="">All Categories</option>
                             <option value="land">Land & Property</option>
                             <option value="governance">Governance</option>
                             <option value="finance">Finance & Economy</option>
@@ -81,51 +203,11 @@
                         </select>
                     </div>
                 </div>
+                
                 <div class="report-grid" id="reports-container">
-                    <article class="report-card" data-id="kriegler" data-category="elections">
-                        <div class="report-icon">
-                            <i class="fas fa-gavel"></i>
-                        </div>
-                        <h3>Kriegler Report (2008)</h3>
-                        <p>Investigation into the 2007/2008 post-election violence and electoral failures with comprehensive recommendations for electoral reforms.</p>
-                        <a href="reports/kriegler.html" class="read-more">
-                            View Details <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </article>
-
-                    <article class="report-card" data-id="tjrc" data-category="reconciliation">
-                        <div class="report-icon">
-                            <i class="fas fa-balance-scale"></i>
-                        </div>
-                        <h3>TJRC Report (2013)</h3>
-                        <p>Truth, Justice and Reconciliation Commission's findings on historical injustices and path to national healing.</p>
-                        <a href="reports/tjrc.html" class="read-more">
-                            View Details <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </article>
-
-                    <article class="report-card" data-id="ndungu" data-category="land">
-                        <div class="report-icon">
-                            <i class="fas fa-map"></i>
-                        </div>
-                        <h3>Ndungu Land Report (2004)</h3>
-                        <p>Commission of Inquiry into the illegal/irregular allocation of public land with detailed recommendations for land reform.</p>
-                        <a href="reports/ndungu.html" class="read-more">
-                            View Details <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </article>
-
-                    <article class="report-card" data-id="nadco" data-category="bipartisan">
-                        <div class="report-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3>NADCO Report (2023)</h3>
-                        <p>National Dialogue Committee recommendations on electoral reforms and national unity initiatives.</p>
-                        <a href="reports/nadco.html" class="read-more">
-                            View Details <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </article>
+                    <!-- Reports will be dynamically populated here -->
                 </div>
+
                 <div class="pagination">
                     <a href="#" class="page-link disabled" id="prev-page"><i class="fas fa-chevron-left"></i> Previous</a>
                     <div id="page-numbers"></div>
@@ -219,75 +301,104 @@
     </nav>
 
     <script>
-        // Set current year in footer
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-            
-            // Initialize reports
-            initializeReports();
-            
-            // Set up event listeners
-            setupEventListeners();
-        });
-
         // Reports data
         const reportsData = [
             {
-                id: 'kriegler',
-                title: 'Kriegler Report (2008)',
-                excerpt: 'Investigation into the 2007/2008 post-election violence and electoral failures with comprehensive recommendations for electoral reforms.',
-                year: '2008',
-                pages: '156',
-                category: 'elections',
-                icon: 'gavel',
-                badgeText: 'Election Report',
-                link: 'reports/kriegler.html'
+                id: 'nadco',
+                title: 'NADCO Report (2023)',
+                excerpt: 'Findings and recommendations from the National Dialogue Committee on political and economic reforms.',
+                year: '2023',
+                pages: '132',
+                category: 'bipartisan',
+                icon: 'handshake',
+                badgeText: 'Bipartisan Report',
+                link: 'reports/nadco.html'
+            },
+            {
+                id: 'judiciary',
+                title: 'Judiciary Transformation Report (2016)',
+                excerpt: 'Comprehensive reforms for Kenya\'s judiciary system under Chief Justice Willy Mutunga.',
+                year: '2016',
+                pages: '210',
+                category: 'judicial',
+                icon: 'balance-scale',
+                badgeText: 'Judicial Report',
+                link: 'reports/judiciary.html'
             },
             {
                 id: 'tjrc',
-                title: 'TJRC Report (2013)',
-                excerpt: 'Truth, Justice and Reconciliation Commission\'s findings on historical injustices and path to national healing.',
+                title: 'Truth, Justice & Reconciliation Report (2013)',
+                excerpt: 'Findings on historical injustices from 1963-2008, chaired by Bethuel Kiplagat.',
                 year: '2013',
                 pages: '480',
                 category: 'reconciliation',
-                icon: 'balance-scale',
+                icon: 'handshake',
                 badgeText: 'Reconciliation',
                 link: 'reports/tjrc.html'
             },
             {
+                id: 'waki',
+                title: 'Waki Report (2008)',
+                excerpt: 'Investigation into the 2007-2008 post-election violence and recommendations.',
+                year: '2008',
+                pages: '210',
+                category: 'security',
+                icon: 'shield-alt',
+                badgeText: 'Security Report',
+                link: 'reports/waki.html'
+            },
+            {
+                id: 'kriegler',
+                title: 'Kriegler Commission Report (2008)',
+                excerpt: 'Investigation into the 2007 post-election violence and electoral system failures.',
+                year: '2008',
+                pages: '156',
+                category: 'elections',
+                icon: 'vote-yea',
+                badgeText: 'Election Report',
+                link: 'reports/kriegler.html'
+            },
+            {
                 id: 'ndungu',
                 title: 'Ndungu Land Report (2004)',
-                excerpt: 'Commission of Inquiry into the illegal/irregular allocation of public land with detailed recommendations for land reform.',
+                excerpt: 'Investigation into illegal/irregular allocation of public land between 1963-2002.',
                 year: '2004',
                 pages: '342',
                 category: 'land',
-                icon: 'map',
-                badgeText: 'Land Report',
+                icon: 'gavel',
+                badgeText: 'Judicial Report',
                 link: 'reports/ndungu.html'
             },
             {
-                id: 'nadco',
-                title: 'NADCO Report (2023)',
-                excerpt: 'National Dialogue Committee recommendations on electoral reforms and national unity initiatives.',
-                year: '2023',
-                pages: '132',
-                category: 'bipartisan',
-                icon: 'users',
-                badgeText: 'Bipartisan Report',
-                link: 'reports/nadco.html'
+                id: 'ers',
+                title: 'Economic Recovery Strategy (2003)',
+                excerpt: 'Blueprint for economic recovery after the 2002 transition under President Kibaki.',
+                year: '2003',
+                pages: '98',
+                category: 'economic',
+                icon: 'chart-line',
+                badgeText: 'Economic Report',
+                link: 'reports/ers.html'
             }
         ];
 
         // Pagination variables
         let currentPage = 1;
-        const reportsPerPage = 4;
+        const reportsPerPage = 6;
         let filteredReports = [...reportsData];
 
-        // Initialize reports
-        function initializeReports() {
+        // Initialize reports when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Initialize reports
             displayReports(filteredReports);
             renderPagination();
-        }
+            
+            // Set up event listeners
+            setupEventListeners();
+        });
 
         // Display reports
         function displayReports(reports) {
@@ -311,18 +422,21 @@
                 reportCard.dataset.category = report.category;
 
                 reportCard.innerHTML = `
-                    <div class="report-icon">
+                    <div class="card-badge">
                         <i class="fas fa-${report.icon}"></i>
+                        ${report.badgeText}
                     </div>
-                    <h3>${report.title}</h3>
-                    <p>${report.excerpt}</p>
-                    <div class="card-meta">
-                        <span><i class="fas fa-calendar-alt"></i> ${report.year}</span>
-                        <span><i class="fas fa-file-pdf"></i> ${report.pages} pages</span>
+                    <div class="card-content">
+                        <h2>${report.title}</h2>
+                        <p class="card-excerpt">${report.excerpt}</p>
+                        <div class="card-meta">
+                            <span><i class="fas fa-calendar-alt"></i> ${report.year}</span>
+                            <span><i class="fas fa-file-pdf"></i> ${report.pages} pages</span>
+                        </div>
                     </div>
-                    <a href="${report.link}" class="read-more">
-                        View Details <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="card-footer">
+                        <a href="${report.link}" class="card-link">View Report <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 `;
 
                 container.appendChild(reportCard);
@@ -360,7 +474,7 @@
             document.getElementById('next-page').classList.toggle('disabled', currentPage === totalPages);
         }
 
-        // Filter reports by search term
+        // Filter reports by search term and category
         function filterReports(searchTerm = '', category = '') {
             currentPage = 1; // Reset to first page when filtering
             
@@ -381,63 +495,7 @@
 
         // Set up event listeners
         function setupEventListeners() {
-            // Search functionality
             const searchInput = document.getElementById('search-input');
             const searchBtn = document.getElementById('search-btn');
-            
-            searchBtn.addEventListener('click', () => {
-                const searchTerm = searchInput.value.trim();
-                const category = document.getElementById('category-filter').value;
-                filterReports(searchTerm, category);
-            });
-            
-            searchInput.addEventListener('keyup', (e) => {
-                if (e.key === 'Enter') {
-                    const searchTerm = searchInput.value.trim();
-                    const category = document.getElementById('category-filter').value;
-                    filterReports(searchTerm, category);
-                }
-            });
-
-            // Category filter
-            document.getElementById('category-filter').addEventListener('change', (e) => {
-                const category = e.target.value;
-                const searchTerm = searchInput.value.trim();
-                filterReports(searchTerm, category);
-            });
-
-            // Pagination buttons
-            document.getElementById('prev-page').addEventListener('click', (e) => {
-                e.preventDefault();
-                if (currentPage > 1) {
-                    currentPage--;
-                    displayReports(filteredReports);
-                    renderPagination();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-            });
-
-            document.getElementById('next-page').addEventListener('click', (e) => {
-                e.preventDefault();
-                const totalPages = Math.ceil(filteredReports.length / reportsPerPage);
-                if (currentPage < totalPages) {
-                    currentPage++;
-                    displayReports(filteredReports);
-                    renderPagination();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-            });
-        }
-    </script>
-
-    <style>
-        /* Additional styles for search and filter functionality */
-        .search-filter {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .search-box {
-            display: flex;
+            const clearSearchBtn = document.getElementById('clear-search');
+            cons
