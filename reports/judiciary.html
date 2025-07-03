@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Judiciary Reforms Report (2012) | Kenya Reports Archive</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <meta name="description" content="Detailed analysis of Kenya's Judiciary Transformation Framework 2012-2016">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="progress-bar"></div>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-archive"></i>
+                    <span class="site-title">Kenya Reports Archive</span>
+                </a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../reports/">Reports</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <button class="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="report-container">
+        <article class="report-content">
+            <!-- Report Header -->
+            <header class="report-header">
+                <div class="report-badge">
+                    <i class="fas fa-balance-scale"></i>
+                    Judicial Transformation
+                </div>
+                <h1>Judiciary Reforms Report (2012)</h1>
+                <div class="report-meta">
+                    <span><i class="fas fa-calendar-alt"></i> Released: May 2012</span>
+                    <span><i class="fas fa-file-pdf"></i> 182 pages</span>
+                    <span><i class="fas fa-user-tie"></i> Judiciary Working Committee on Reforms</span>
+                </div>
+            </header>
+
+            <!-- Executive Summary -->
+            <section class="report-section">
+                <h2><i class="fas fa-file-alt"></i> Executive Summary</h2>
+                <p>The Judiciary Transformation Framework (JTF) 2012-2016 was developed under Chief Justice Willy Mutunga to implement Article 159 of Kenya's Constitution. This blueprint addressed systemic failures exposed during the 2007/08 post-election crisis when courts failed to resolve electoral disputes effectively.</p>
+                
+                <div class="key-findings">
+                    <h3>Historical Context:</h3>
+                    <ul>
+                        <li>2007: High Court declined to hear election petitions citing "lack of jurisdiction"</li>
+                        <li>2010 Constitution created Judiciary as independent arm of government</li>
+                        <li>2011: Vetting of judges removed 40% of magistrates and 14 judges</li>
+                        <li>2012: First public interview process for judicial appointments</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Key Findings -->
+            <section class="report-section">
+                <h2><i class="fas fa-search"></i> Key Findings</h2>
+                
+                <div class="chart-grid">
+                    <div class="chart-container">
+                        <canvas id="performanceChart"></canvas>
+                        <p class="chart-caption">Fig 1: Pre-reform judiciary performance metrics (Source: JSC 2011 Audit)</p>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <canvas id="caseloadChart"></canvas>
+                        <p class="chart-caption">Fig 2: Case backlog composition (2011 data)</p>
+                    </div>
+                </div>
+                
+                <div class="findings-list">
+                    <div class="finding-card critical">
+                        <h3>1. Institutional Deficiencies</h3>
+                        <p>The diagnostic revealed <strong>chronic weaknesses</strong>:</p>
+                        <ul>
+                            <li>Case backlog of 1 million (some dating to 1980s)</li>
+                            <li>Average case duration: 5.7 years for civil matters</li>
+                            <li>Only 42% of Kenyans trusted judicial system (2011 TI survey)</li>
+                            <li>Corruption perception index: 3.8/10 for judiciary</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="finding-card">
+                        <h3>2. Structural Problems</h3>
+                        <p>Root causes of judicial inefficiency:</p>
+                        <ul>
+                            <li>Politicized appointments process</li>
+                            <li>Inadequate funding (0.4% of national budget)</li>
+                            <li>Outdated case management systems (paper-based files)</li>
+                            <li>Concentration of courts in urban areas</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="finding-card">
+                        <h3>3. Public Trust Crisis</h3>
+                        <p>Key drivers of declining confidence:</p>
+                        <ul>
+                            <li>Perceived "cash-for-rulings" culture</li>
+                            <li>Lack of transparency in rulings</li>
+                            <li>Deliberate delays to benefit litigants</li>
+                            <li>Inconsistent application of laws</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recommendations -->
+            <section class="report-section">
+                <h2><i class="fas fa-bullseye"></i> Key Recommendations</h2>
+                
+                <div class="recommendations-grid">
+                    <div class="recommendation-card urgent">
+                        <div class="rec-number">01</div>
+                        <h3>Case Clearance</h3>
+                        <p>Reduce case backlog by 50% through Night Courts and ADR mechanisms</p>
+                    </div>
+                    
+                    <div class="recommendation-card urgent">
+                        <div class="rec-number">02</div>
+                        <h3>Technology Upgrade</h3>
+                        <p>Implement integrated Case Tracking System (CTS) across all courts</p>
+                    </div>
+                    
+                    <div class="recommendation-card">
+                        <div class="rec-number">03</div>
+                        <h3>Decentralization</h3>
+                        <p>Establish 100 new magistrate courts in underserved areas</p>
+                    </div>
+                    
+                    <div class="recommendation-card">
+                        <div class="rec-number">04</div>
+                        <h3>Performance Metrics</h3>
+                        <p>Introduce individual judicial officer performance evaluations</p>
+                    </div>
+                </div>
+                
+                <div class="framework-pillars">
+                    <h3>Four Transformation Pillars:</h3>
+                    <div class="pillars-container">
+                        <div class="pillar">
+                            <div class="pillar-icon"><i class="fas fa-user-shield"></i></div>
+                            <h4>People Focused</h4>
+                            <p>Enhancing access to justice</p>
+                        </div>
+                        <div class="pillar">
+                            <div class="pillar-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            <h4>Efficiency</h4>
+                            <p>Timely dispute resolution</p>
+                        </div>
+                        <div class="pillar">
+                            <div class="pillar-icon"><i class="fas fa-lock-open"></i></div>
+                            <h4>Accountability</h4>
+                            <p>Transparent operations</p>
+                        </div>
+                        <div class="pillar">
+                            <div class="pillar-icon"><i class="fas fa-project-diagram"></i></div>
+                            <h4>Organization</h4>
+                            <p>Optimal structures</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Implementation Status -->
+            <section class="report-section status-section">
+                <h2><i class="fas fa-tasks"></i> Implementation Status (2023 Update)</h2>
+                
+                <div class="status-chart">
+                    <canvas id="judiciaryImplementationChart"></canvas>
+                </div>
+                
+                <div class="status-key">
+                    <div class="key-item">
+                        <span class="key-dot not-started"></span>
+                        <span>Not Implemented (15%)</span>
+                    </div>
+                    <div class="key-item">
+                        <span class="key-dot partial"></span>
+                        <span>Partial (35%)</span>
+                    </div>
+                    <div class="key-item">
+                        <span class="key-dot complete"></span>
+                        <span>Complete (50%)</span>
+                    </div>
+                </div>
+                
+                <div class="status-details">
+                    <h3>Notable Developments:</h3>
+                    <ul>
+                        <li><strong>Complete:</strong> CTS rolled out to 120+ courts (though with technical issues)</li>
+                        <li><strong>Complete:</strong> Backlog reduced to 350,000 cases by 2022</li>
+                        <li><strong>Partial:</strong> 78 new magistrate courts established (vs 100 target)</li>
+                        <li><strong>Not Implemented:</strong> Performance-based promotions not fully adopted</li>
+                    </ul>
+                    
+                    <div class="impact-box">
+                        <h3>Impact Assessment:</h3>
+                        <div class="impact-stats">
+                            <div class="stat">
+                                <div class="stat-value">63%</div>
+                                <div class="stat-label">Public Trust (2022)</div>
+                                <div class="stat-change up">↑21% from 2011</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">2.1yrs</div>
+                                <div class="stat-label">Avg. Case Duration</div>
+                                <div class="stat-change down">↓63% from 2011</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">5.2/10</div>
+                                <div class="stat-label">Corruption Perception</div>
+                                <div class="stat-change up">↑1.4pts from 2011</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="source-box">
+                        <p><strong>Sources:</strong> Judiciary Annual Reports (2022), Transparency International Kenya, Afrobarometer Survey</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Download Section -->
+            <section class="report-download">
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h2>Download Full Report</h2>
+                    <p>Access the complete Judiciary Transformation Framework from the official repository:</p>
+                    <a href="https://www.judiciary.go.ke/download/judiciary-transformation-framework-2012-2016/" class="download-btn" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-download"></i> Download PDF (3.4MB)
+                    </a>
+                    <div class="file-details">
+                        <p><strong>Original Source:</strong> Judiciary of Kenya</p>
+                        <p><strong>Direct Link:</strong> <small>judiciary.go.ke/download/judiciary-transformation-framework/</small></p>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="site-footer" id="contact">
+        <!-- Same footer as previous templates -->
+    </footer>
+
+    <nav class="bottom-nav">
+        <!-- Same bottom nav as previous templates -->
+    </nav>
+
+    <script>
+        // Chart.js Implementation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Performance Metrics Chart
+            const performanceCtx = document.getElementById('performanceChart').getContext('2d');
+            new Chart(performanceCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Case Clearance Rate', 'Timely Rulings', 'Public Trust', 'Corruption Perception'],
+                    datasets: [{
+                        label: '2011 Baseline Metrics',
+                        data: [38, 22, 42, 38],
+                        backgroundColor: 'rgba(41, 128, 185, 0.7)',
+                        borderColor: 'rgba(41, 128, 185, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: '2022 Status',
+                        data: [72, 65, 63, 52],
+                        backgroundColor: 'rgba(39, 174, 96, 0.7)',
+                        borderColor: 'rgba(39, 174, 96, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            title: {
+                                display: true,
+                                text: 'Percentage Score'
+                            }
+                        }
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Judicial Performance Improvement (2011 vs 2022)'
+                        }
+                    }
+                }
+            });
+
+            // Caseload Chart
+            const caseloadCtx = document.getElementById('caseloadChart').getContext('2d');
+            new Chart(caseloadCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Civil Cases', 'Criminal Cases', 'Family Cases', 'Commercial Cases', 'Constitutional Petitions'],
+                    datasets: [{
+                        data: [45, 30, 12, 8, 5],
+                        backgroundColor: [
+                            'rgba(231, 76, 60, 0.7)',
+                            'rgba(41, 128, 185, 0.7)',
+                            'rgba(243, 156, 18, 0.7)',
+                            'rgba(39, 174, 96, 0.7)',
+                            'rgba(142, 68, 173, 0.7)'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Case Backlog Composition (2011)'
+                        }
+                    }
+                }
+            });
+
+            // Implementation Status Chart
+            const judiciaryImplementationCtx = document.getElementById('judiciaryImplementationChart').getContext('2d');
+            new Chart(judiciaryImplementationCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Not Implemented', 'Partial Implementation', 'Fully Implemented'],
+                    datasets: [{
+                        data: [15, 35, 50],
+                        backgroundColor: [
+                            'rgba(231, 76, 60, 0.7)',
+                            'rgba(241, 196, 15, 0.7)',
+                            'rgba(39, 174, 96, 0.7)'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Reform Implementation Status (2023)'
+                        }
+                    }
+                }
+            });
+
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
