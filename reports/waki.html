@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waki Report (2008) | Kenya Reports Archive</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <meta name="description" content="Detailed analysis of Kenya's Waki Report on 2007/08 post-election violence">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="progress-bar"></div>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-archive"></i>
+                    <span class="site-title">Kenya Reports Archive</span>
+                </a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../reports/">Reports</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <button class="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="report-container">
+        <article class="report-content">
+            <!-- Report Header -->
+            <header class="report-header">
+                <div class="report-badge">
+                    <i class="fas fa-gavel"></i>
+                    Commission of Inquiry
+                </div>
+                <h1>Waki Report (2008)</h1>
+                <div class="report-meta">
+                    <span><i class="fas fa-calendar-alt"></i> Released: October 2008</span>
+                    <span><i class="fas fa-file-pdf"></i> 529 pages</span>
+                    <span><i class="fas fa-user-tie"></i> Commission of Inquiry into Post-Election Violence</span>
+                </div>
+            </header>
+
+            <!-- Executive Summary -->
+            <section class="report-section">
+                <h2><i class="fas fa-file-alt"></i> Executive Summary</h2>
+                <p>The Waki Report, officially titled <em>"Report of the Commission of Inquiry into Post-Election Violence (CIPEV)"</em>, was established under the National Accord to investigate the 2007/08 post-election violence. Chaired by Justice Philip Waki, the commission documented systematic human rights violations and recommended accountability mechanisms.</p>
+                
+                <div class="key-findings">
+                    <h3>Core Mandate:</h3>
+                    <ul>
+                        <li>Investigate facts and circumstances of post-election violence</li>
+                        <li>Establish root causes and patterns of violence</li>
+                        <li>Identify perpetrators and instigators</li>
+                        <li>Recommend legal and policy reforms</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Key Findings -->
+            <section class="report-section">
+                <h2><i class="fas fa-search"></i> Key Findings</h2>
+                
+                <div class="chart-grid">
+                    <div class="chart-container">
+                        <canvas id="violenceTimelineChart"></canvas>
+                        <p class="chart-caption">Fig 1: Phases of post-election violence (Source: Waki Report, p.87)</p>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <canvas id="perpetratorsChart"></canvas>
+                        <p class="chart-caption">Fig 2: Breakdown of perpetrators (Source: CIPEV data)</p>
+                    </div>
+                </div>
+                
+                <div class="findings-list">
+                    <div class="finding-card critical">
+                        <h3>1. Systematic Violence</h3>
+                        <p>The commission documented <strong>organized attacks</strong> with distinct patterns:</p>
+                        <ul>
+                            <li>1,133 confirmed deaths (405 by police gunfire)</li>
+                            <li>Over 650,000 internally displaced persons</li>
+                            <li>Sexual violence used as weapon (900 documented cases)</li>
+                            <li>117,216 private properties destroyed</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="finding-card">
+                        <h3>2. Perpetrators & Instigators</h3>
+                        <p>Identified actors responsible for violence:</p>
+                        <ul>
+                            <li>Politicians planned and financed ethnic militia groups</li>
+                            <li>Police used excessive force (30% of all deaths)</li>
+                            <li>Local administrators facilitated violence in 12 hotspots</li>
+                            <li>Business leaders funded transportation of attackers</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="finding-card">
+                        <h3>3. Institutional Failures</h3>
+                        <p>Systemic breakdowns that enabled violence:</p>
+                        <ul>
+                            <li>Security forces failed to protect civilians in 8 counties</li>
+                            <li>Judiciary lacked capacity for timely election disputes</li>
+                            <li>Media incited violence through hate speech</li>
+                            <li>Historical land injustices exacerbated tensions</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recommendations -->
+            <section class="report-section">
+                <h2><i class="fas fa-bullseye"></i> Key Recommendations</h2>
+                
+                <div class="recommendations-grid">
+                    <div class="recommendation-card urgent">
+                        <div class="rec-number">01</div>
+                        <h3>Special Tribunal</h3>
+                        <p>Establish Kenyan-led Special Tribunal with international judges to try perpetrators</p>
+                    </div>
+                    
+                    <div class="recommendation-card urgent">
+                        <div class="rec-number">02</div>
+                        <h3>ICC Referral</h3>
+                        <p>Seek International Criminal Court intervention if Kenya fails to prosecute within 12 months</p>
+                    </div>
+                    
+                    <div class="recommendation-card">
+                        <div class="rec-number">03</div>
+                        <h3>Police Reforms</h3>
+                        <p>Complete overhaul of police command structure and training</p>
+                    </div>
+                    
+                    <div class="recommendation-card">
+                        <div class="rec-number">04</div>
+                        <h3>Truth Commission</h3>
+                        <p>Establish TJRC to address historical injustices fueling violence</p>
+                    </div>
+                </div>
+                
+                <div class="envelope-note">
+                    <i class="fas fa-lock"></i>
+                    <p>The report famously included a <strong>secret envelope</strong> containing names of alleged perpetrators, to be handed to the ICC if Kenya failed to establish the Special Tribunal.</p>
+                </div>
+            </section>
+
+            <!-- Implementation Status -->
+            <section class="report-section status-section">
+                <h2><i class="fas fa-tasks"></i> Implementation Status (2023 Update)</h2>
+                
+                <div class="status-chart">
+                    <canvas id="wakiImplementationChart"></canvas>
+                </div>
+                
+                <div class="status-key">
+                    <div class="key-item">
+                        <span class="key-dot not-started"></span>
+                        <span>Not Implemented (40%)</span>
+                    </div>
+                    <div class="key-item">
+                        <span class="key-dot partial"></span>
+                        <span>Partial (35%)</span>
+                    </div>
+                    <div class="key-item">
+                        <span class="key-dot complete"></span>
+                        <span>Complete (25%)</span>
+                    </div>
+                </div>
+                
+                <div class="status-details">
+                    <h3>Notable Developments:</h3>
+                    <ul>
+                        <li><strong>Complete:</strong> ICC intervention (6 cases initiated though most collapsed)</li>
+                        <li><strong>Partial:</strong> Police reforms begun but not fully implemented</li>
+                        <li><strong>Partial:</strong> TJRC established but recommendations ignored</li>
+                        <li><strong>Not Implemented:</strong> No Special Tribunal created</li>
+                    </ul>
+                    
+                    <div class="source-box">
+                        <p><strong>Sources:</strong> ICC Kenya Cases Timeline, National Police Service Commission Reports (2022), TJRC Final Report</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Download Section -->
+            <section class="report-download">
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h2>Download Full Report</h2>
+                    <p>Access the complete Waki Report from the official repository:</p>
+                    <a href="https://www.kenyalaw.org/kl/fileadmin/pdfdownloads/Reports/Waki_Report.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-download"></i> Download PDF (4.7MB)
+                    </a>
+                    <div class="file-details">
+                        <p><strong>Original Source:</strong> Kenya Law Reports</p>
+                        <p><strong>Direct Link:</strong> <small>kenyalaw.org/kl/fileadmin/pdfdownloads/Reports/</small></p>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="site-footer" id="contact">
+        <!-- Same footer as Kriegler template -->
+    </footer>
+
+    <nav class="bottom-nav">
+        <!-- Same bottom nav as Kriegler template -->
+    </nav>
+
+    <script>
+        // Chart.js Implementation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Violence Timeline Chart
+            const timelineCtx = document.getElementById('violenceTimelineChart').getContext('2d');
+            new Chart(timelineCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Dec 27-30', 'Dec 31-Jan 2', 'Jan 3-15', 'Jan 16-29', 'Jan 30-Feb 28'],
+                    datasets: [{
+                        label: 'Deaths per Phase',
+                        data: [156, 342, 412, 143, 80],
+                        backgroundColor: 'rgba(192, 57, 43, 0.2)',
+                        borderColor: 'rgba(192, 57, 43, 1)',
+                        borderWidth: 3,
+                        tension: 0.3,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Post-Election Violence Timeline'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Fatalities'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Perpetrators Chart
+            const perpetratorsCtx = document.getElementById('perpetratorsChart').getContext('2d');
+            new Chart(perpetratorsCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['Police', 'Mungiki', 'Ethnic Militias', 'Sabaot Land Defence', 'Other'],
+                    datasets: [{
+                        data: [30, 25, 20, 15, 10],
+                        backgroundColor: [
+                            'rgba(41, 128, 185, 0.7)',
+                            'rgba(231, 76, 60, 0.7)',
+                            'rgba(243, 156, 18, 0.7)',
+                            'rgba(39, 174, 96, 0.7)',
+                            'rgba(142, 68, 173, 0.7)'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Violence Perpetrators (% of incidents)'
+                        }
+                    }
+                }
+            });
+
+            // Implementation Status Chart
+            const wakiImplementationCtx = document.getElementById('wakiImplementationChart').getContext('2d');
+            new Chart(wakiImplementationCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Not Implemented', 'Partial Implementation', 'Fully Implemented'],
+                    datasets: [{
+                        data: [40, 35, 25],
+                        backgroundColor: [
+                            'rgba(231, 76, 60, 0.7)',
+                            'rgba(241, 196, 15, 0.7)',
+                            'rgba(39, 174, 96, 0.7)'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Waki Recommendations Implementation (2023)'
+                        }
+                    }
+                }
+            });
+
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
