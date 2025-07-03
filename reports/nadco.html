@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NADCO Report (2023) | Kenya Reports Archive</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <meta name="description" content="Analysis of Kenya's NADCO Report on bipartisan political dialogue">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="progress-bar"></div>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-archive"></i>
+                    <span class="site-title">Kenya Reports Archive</span>
+                </a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../reports/">Reports</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <button class="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="report-container">
+        <article class="report-content">
+            <!-- Report Header -->
+            <header class="report-header">
+                <div class="report-badge">
+                    <i class="fas fa-handshake"></i>
+                    National Dialogue Committee
+                </div>
+                <h1>NADCO Report (2023)</h1>
+                <div class="report-meta">
+                    <span><i class="fas fa-calendar-alt"></i> Released: November 2023</span>
+                    <span><i class="fas fa-file-pdf"></i> 132 pages</span>
+                    <span><i class="fas fa-users"></i> Co-chairs: Kalonzo Musyoka & Kimani Ichung'wah</span>
+                </div>
+            </header>
+
+            <!-- Executive Summary -->
+            <section class="report-section">
+                <h2><i class="fas fa-file-alt"></i> Executive Summary</h2>
+                <p>The NADCO Report, officially titled <em>"Report of the National Dialogue Committee on the Bipartisan Talks"</em>, was established following the 2022/23 political crisis and anti-government protests. The committee comprised representatives from both government and opposition coalitions.</p>
+                
+                <div class="key-findings">
+                    <h3>Core Mandate:</h3>
+                    <ul>
+                        <li>Address cost of living concerns</li>
+                        <li>Review electoral justice and audit 2022 elections</li>
+                        <li>Establish fidelity to political parties/coalitions</li>
+                        <li>Create inclusive governance structure</li>
+                        <li>Address national cohesion issues</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Key Findings -->
+            <section class="report-section">
+                <h2><i class="fas fa-search"></i> Key Findings</h2>
+                
+                <div class="chart-grid">
+                    <div class="chart-container">
+                        <canvas id="publicConcernsChart"></canvas>
+                        <p class="chart-caption">Fig 1: Public priority concerns (Source: NADCO public participation data)</p>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <canvas id="electionAuditChart"></canvas>
+                        <p class="chart-caption">Fig 2: 2022 election audit findings (Source: NADCO Technical Committee)</p>
+                    </div>
+                </div>
+                
+                <div class="findings-list">
+                    <div class="finding-card critical">
+                        <h3>1. Cost of Living Crisis</h3>
+                        <p>The committee identified <strong>urgent economic pressures</strong>:</p>
+                        <ul>
+                            <li>83% of Kenyans reported reduced purchasing power</li>
+                            <li>Food inflation peaked at 13.8% in 2023</li>
+                            <li>Fuel prices increased by 45% since 2022</li>
+                            <li>72% of households cutting essential expenses</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="finding-card">
+                        <h3>2. Electoral Reforms</h3>
+                        <p>Key issues in electoral management:</p>
+                        <ul>
+                            <li>Voter register contained 164,000 discrepancies</li>
+                            <li>Results transmission delays in 12% of stations</li>
+                            <li>Need for stronger IEBC selection mechanism</li>
+                            <li>Legal gaps in presidential election dispute resolution</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="finding-card">
+                        <h3>3. Governance Structure</h3>
+                        <p>Proposed constitutional changes:</p>
+                        <ul>
+                            <li>Establishment of Official Leader of Opposition office</li>
+                            <li>50% budgetary allocation to county governments</li>
+                            <li>Two-thirds gender rule implementation mechanism</li>
+                            <li>Expanded executive (Prime Minister + 2 Deputies)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recommendations -->
+            <section class="report-section">
+                <h2><i class="fas fa-bullseye"></i> Key Recommendations</h2>
+                
+                <div class="recommendations-grid">
+                    <div class="recommendation-card urgent">
+                        <div class="rec-number">01</div>
+                        <h3>Economic Recovery</h3>
+                        <p>Immediate reduction of VAT on fuel from 16% to 8%</p>
+                    </div>
+                    
+                    <div class="recommendation-card">
+                        <div class="rec-number">02</div>
+                        <h3>Electoral Reforms</h3>
+                        <p>Constitutional amendment to restructure IEBC selection panel</p>
+                    </div>
+                    
+                    <div class="recommendation-card urgent">
+                        <div class="rec-number">03</div>
+                        <h3>Opposition Office</h3>
+                        <p>Establish official Leader of Opposition with state funding</p>
+                    </div>
+                    
+                    <div class="recommendation-card">
+                        <div class="rec-number">04</div>
+                        <h3>Constitutional Review</h3>
+                        <p>Referendum on expanded executive structure by 2025</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Implementation Status -->
+            <section class="report-section status-section">
+                <h2><i class="fas fa-tasks"></i> Implementation Status (2024 Update)</h2>
+                
+                <div class="status-chart">
+                    <canvas id="nadcoImplementationChart"></canvas>
+                </div>
+                
+                <div class="status-key">
+                    <div class="key-item">
+                        <span class="key-dot not-started"></span>
+                        <span>Not Implemented (60%)</span>
+                    </div>
+                    <div class="key-item">
+                        <span class="key-dot partial"></span>
+                        <span>In Progress (30%)</span>
+                    </div>
+                    <div class="key-item">
+                        <span class="key-dot complete"></span>
+                        <span>Complete (10%)</span>
+                    </div>
+                </div>
+                
+                <div class="status-details">
+                    <h3>Notable Developments:</h3>
+                    <ul>
+                        <li><strong>Complete:</strong> VAT on fuel reduced to 8% (Oct 2023)</li>
+                        <li><strong>In Progress:</strong> IEBC selection panel reconstitution bill tabled</li>
+                        <li><strong>Not Implemented:</strong> No action on Leader of Opposition position</li>
+                        <li><strong>Not Implemented:</strong> Referendum plans stalled</li>
+                    </ul>
+                    
+                    <div class="source-box">
+                        <p><strong>Sources:</strong> National Treasury Reports (2024), Parliamentary Records</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Download Section -->
+            <section class="report-download">
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h2>Download Full Report</h2>
+                    <p>Access the complete NADCO Report from the official repository:</p>
+                    <a href="https://www.parliament.go.ke/sites/default/files/2023-11/NADCO%20Report%20Final.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-download"></i> Download PDF (4.7MB)
+                    </a>
+                    <div class="file-details">
+                        <p><strong>Original Source:</strong> Parliament of Kenya</p>
+                        <p><strong>Direct Link:</strong> <small>parliament.go.ke/sites/default/files/2023-11/</small></p>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="site-footer" id="contact">
+        <!-- Same footer as previous templates -->
+    </footer>
+
+    <nav class="bottom-nav">
+        <!-- Same bottom nav as previous templates -->
+    </nav>
+
+    <script>
+        // Chart.js Implementation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Public Concerns Chart
+            const concernsCtx = document.getElementById('publicConcernsChart').getContext('2d');
+            new Chart(concernsCtx, {
+                type: 'horizontalBar',
+                data: {
+                    labels: ['Cost of Living', 'Unemployment', 'Electoral Reforms', 'Corruption', 'National Unity'],
+                    datasets: [{
+                        label: 'Public Priority Ranking (%)',
+                        data: [87, 76, 65, 58, 42],
+                        backgroundColor: 'rgba(41, 128, 185, 0.7)',
+                        borderColor: 'rgba(41, 128, 185, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Citizen Priority Concerns (2023)'
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    }
+                }
+            });
+
+            // Election Audit Chart
+            const electionCtx = document.getElementById('electionAuditChart').getContext('2d');
+            new Chart(electionCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['Voter Register', 'Technology Systems', 'Staff Competence', 'Result Transmission', 'Dispute Resolution', 'Campaign Finance'],
+                    datasets: [{
+                        label: 'Electoral Integrity Score (100=Best)',
+                        data: [68, 72, 65, 70, 60, 45],
+                        backgroundColor: 'rgba(39, 174, 96, 0.5)',
+                        borderColor: 'rgba(39, 174, 96, 1)',
+                        pointBackgroundColor: 'rgba(39, 174, 96, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(39, 174, 96, 1)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        r: {
+                            angleLines: { display: true },
+                            suggestedMin: 0,
+                            suggestedMax: 100
+                        }
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: '2022 Election System Evaluation'
+                        }
+                    }
+                }
+            });
+
+            // Implementation Status Chart
+            const nadcoImpCtx = document.getElementById('nadcoImplementationChart').getContext('2d');
+            new Chart(nadcoImpCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Not Implemented', 'In Progress', 'Fully Implemented'],
+                    datasets: [{
+                        data: [60, 30, 10],
+                        backgroundColor: [
+                            'rgba(231, 76, 60, 0.7)',
+                            'rgba(241, 196, 15, 0.7)',
+                            'rgba(39, 174, 96, 0.7)'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'NADCO Recommendation Implementation (2024)'
+                        }
+                    }
+                }
+            });
+
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
