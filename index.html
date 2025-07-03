@@ -150,6 +150,14 @@
         }
 
         /* Search results section */
+        .search-reports {
+            display: none;
+        }
+
+        .search-reports.active {
+            display: block;
+        }
+
         .search-reports .report-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -241,10 +249,10 @@
 
         <section class="featured-reports">
             <div class="container">
-                <h2>Recently Added Reports</h2>
+                <h2>Featured Reports</h2>
                 
                 <div class="report-grid" id="featured-reports-container">
-                    <!-- Featured reports will be dynamically populated here -->
+                    <!-- First 3 reports will be displayed here -->
                 </div>
                 
                 <div class="text-center" style="margin-top: 2rem;">
@@ -256,9 +264,9 @@
             </div>
         </section>
 
-        <section class="search-reports">
+        <section class="search-reports" id="search-section">
             <div class="container">
-                <h2>Search All Reports</h2>
+                <h2>Search Reports</h2>
                 
                 <div class="search-filter">
                     <div class="search-box">
@@ -285,11 +293,11 @@
                     </div>
                 </div>
                 
-                <div class="report-grid" id="search-results-container" style="display: none;">
+                <div class="report-grid" id="search-results-container">
                     <!-- Search results will be displayed here -->
                 </div>
 
-                <div class="pagination" id="search-pagination" style="display: none;">
+                <div class="pagination" id="search-pagination">
                     <a href="#" class="page-link disabled" id="prev-page"><i class="fas fa-chevron-left"></i> Previous</a>
                     <div id="page-numbers"></div>
                     <a href="#" class="page-link" id="next-page">Next <i class="fas fa-chevron-right"></i></a>
@@ -463,9 +471,6 @@
             }
         ];
 
-        // Sort reports by year (newest first)
-        const sortedReports = [...reportsData].sort((a, b) => parseInt(b.year) - parseInt(a.year));
-
         // Pagination variables for search results
         let currentPage = 1;
         const reportsPerPage = 6;
@@ -476,25 +481,20 @@
             // Set current year in footer
             document.getElementById('current-year').textContent = new Date().getFullYear();
             
-            // Display featured reports (3 newest)
+            // Display first 3 featured reports
             displayFeaturedReports();
             
             // Set up event listeners for search
             setupSearchListeners();
         });
 
-        // Display 3 newest featured reports
+        // Display first 3 featured reports
         function displayFeaturedReports() {
             const container = document.getElementById('featured-reports-container');
             container.innerHTML = '';
 
-            // Get 3 newest reports
-            const featuredReports = sortedReports.slice(0, 3);
-
-            if (featuredReports.length === 0) {
-                container.innerHTML = '<p>No featured reports available</p>';
-                return;
-            }
+            // Get first 3 reports
+            const featuredReports = reportsData.slice(0, 3);
 
             featuredReports.forEach(report => {
                 const reportCard = document.createElement('article');
@@ -516,4 +516,14 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <a href="${report.link}" class="card-link">View Report <i class="fas fa-arr
+                        <a href="${report.link}" class="card-link">View Report <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                `;
+
+                container.appendChild(reportCard);
+            });
+        }
+
+        // Display search results
+        function displaySearchResults(reports) {
+      
