@@ -3,28 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maestropuns | Kenyan Reports Archive</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Kenya Reports Archive - Documenting Unimplemented Reforms</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="description" content="Comprehensive archive of Kenyan investigative reports that were never fully implemented">
 </head>
 <body>
-    <header>
+    <header class="site-header">
         <div class="container">
-            <div class="logo">
-                <h1>Kenya Reports Archive</h1>
-                <p>Kenyan Reports Archive</p>
-            </div>
-            <nav>
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Kenya Reports Archive Logo">
+                <span class="site-title">Kenya Reports Archive</span>
+            </a>
+            <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="reports/">Reports</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="reports.html">Reports</a></li>
-                    <li><a href="resources.html">Resources</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
-                <div class="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
+                <button class="mobile-menu-toggle">☰</button>
             </nav>
         </div>
     </header>
@@ -32,79 +29,102 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h2>Documenting Kenya's Unimplemented Reports</h2>
-                <p>Exploring the critical findings and recommendations that were meant to shape Kenya's future but remain unimplemented.</p>
-                <a href="reports.html" class="btn">Explore Reports</a>
+                <h1>Kenya's Forgotten Reports</h1>
+                <p class="tagline">Documenting the unimplemented reforms that could have transformed our nation</p>
+                <a href="reports/" class="cta-button">Explore Reports</a>
+            </div>
+        </section>
+
+        <section class="mission-statement">
+            <div class="container">
+                <h2>Why This Archive Matters</h2>
+                <p>Kenya has produced numerous high-quality reports with detailed recommendations for national transformation. Many of these reports were commissioned at great public expense but were never fully implemented. This archive serves as a permanent, accessible record of these critical documents.</p>
             </div>
         </section>
 
         <section class="featured-reports">
             <div class="container">
-                <h2>Featured Reports</h2>
+                <h2>Key Reports in Our Archive</h2>
                 <div class="report-grid">
-                    <div class="report-card">
-                        <h3>Kriegler Report</h3>
-                        <p>Post-election violence investigation (2008)</p>
-                        <a href="reports/kriegler.html" class="btn">Read More</a>
-                    </div>
-                    <div class="report-card">
-                        <h3>TJRC Report</h3>
-                        <p>Truth, Justice and Reconciliation Commission (2013)</p>
-                        <a href="reports/tjrc.html" class="btn">Read More</a>
-                    </div>
-                    <div class="report-card">
-                        <h3>Ndungu Land Report</h3>
-                        <p>Commission of Inquiry into the Illegal/Irregular Allocation of Public Land (2004)</p>
-                        <a href="reports/ndungu.html" class="btn">Read More</a>
-                    </div>
-                    <div class="report-card">
-                        <h3>NADCO Report</h3>
-                        <p>National Dialogue Committee Report (2023)</p>
-                        <a href="reports/nadco.html" class="btn">Read More</a>
-                    </div>
+                    <article class="report-card">
+                        <h3>Kriegler Report (2008)</h3>
+                        <p>Investigation into the 2007/2008 post-election violence and electoral failures</p>
+                        <a href="reports/kriegler.html" class="read-more">View Details →</a>
+                    </article>
+                    
+                    <article class="report-card">
+                        <h3>TJRC Report (2013)</h3>
+                        <p>Truth, Justice and Reconciliation Commission's findings on historical injustices</p>
+                        <a href="reports/tjrc.html" class="read-more">View Details →</a>
+                    </article>
+                    
+                    <article class="report-card">
+                        <h3>Ndungu Land Report (2004)</h3>
+                        <p>Commission of Inquiry into the illegal/irregular allocation of public land</p>
+                        <a href="reports/ndungu.html" class="read-more">View Details →</a>
+                    </article>
+                    
+                    <article class="report-card">
+                        <h3>NADCO Report (2023)</h3>
+                        <p>National Dialogue Committee recommendations on electoral reforms</p>
+                        <a href="reports/nadco.html" class="read-more">View Details →</a>
+                    </article>
                 </div>
             </div>
         </section>
 
         <section class="call-to-action">
             <div class="container">
-                <h2>Knowledge is Power</h2>
-                <p>Understanding these reports is the first step toward demanding their implementation.</p>
-                <a href="about.html" class="btn">Learn Why This Matters</a>
+                <h2>Knowledge for Accountability</h2>
+                <p>These reports contain solutions to many of Kenya's persistent challenges. By studying them, we can hold leaders accountable for implementation.</p>
+                <div class="action-buttons">
+                    <a href="reports/" class="cta-button">Browse All Reports</a>
+                    <a href="about.html" class="cta-button secondary">Learn More</a>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="site-footer" id="contact">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Maestropuns</h3>
-                    <p>Documenting Kenya's unimplemented reforms and reports.</p>
+                <div class="footer-about">
+                    <img src="images/logo.png" alt="Kenya Reports Archive Logo" class="footer-logo">
+                    <p>Preserving Kenya's unimplemented reform documents for public access and accountability.</p>
                 </div>
-                <div class="footer-section">
+                
+                <div class="footer-links">
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="reports.html">Reports</a></li>
-                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="reports/">Reports</a></li>
+                        <li><a href="about.html">About This Project</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h3>Connect</h3>
+                
+                <div class="footer-social">
+                    <h3>Follow Maestropuns</h3>
                     <div class="social-icons">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/maestropuns" target="_blank" rel="noopener noreferrer">
+                            <img src="images/social/twitter.png" alt="Twitter">
+                        </a>
+                        <a href="https://facebook.com/maestropuns" target="_blank" rel="noopener noreferrer">
+                            <img src="images/social/facebook.png" alt="Facebook">
+                        </a>
+                        <a href="https://instagram.com/maestropuns" target="_blank" rel="noopener noreferrer">
+                            <img src="images/social/instagram.png" alt="Instagram">
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2023 Maestropuns. All rights reserved.</p>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Kenya Reports Archive. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
