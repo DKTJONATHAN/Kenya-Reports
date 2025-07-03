@@ -6,169 +6,295 @@
     <title>About Kenya Reports Archive - Documenting Unimplemented Reforms</title>
     <link rel="stylesheet" href="css/styles.css">
     <meta name="description" content="Learn about the Kenya Reports Archive project documenting unimplemented government reports and commissions">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <div class="progress-bar"></div>
+
     <header class="site-header">
         <div class="container">
-            <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="Kenya Reports Archive Logo">
-                <span class="site-title">Kenya Reports Archive</span>
-            </a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="reports/">Reports</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <button class="mobile-menu-toggle">☰</button>
-            </nav>
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-archive"></i>
+                    <span class="site-title">Kenya Reports Archive</span>
+                </a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="reports/">Reports</a></li>
+                        <li><a href="about.html" class="active">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <button class="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </div>
         </div>
     </header>
 
-    <main class="about-page">
+    <main>
         <section class="page-header">
             <div class="container">
-                <h1>About Kenya Reports Archive</h1>
-                <p class="subtitle">Preserving Kenya's unimplemented reform documents for public access and accountability</p>
+                <div class="page-header-content">
+                    <h1>About Kenya Reports Archive</h1>
+                    <p class="page-subtitle">Preserving Kenya's unimplemented reform documents for public access and accountability</p>
+                    <div class="breadcrumb">
+                        <a href="index.html">Home</a>
+                        <i class="fas fa-chevron-right"></i>
+                        <span>About</span>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="about-content">
+        <section class="about-section mission-section">
             <div class="container">
-                <article class="about-section">
+                <div class="section-header">
                     <h2>Our Mission</h2>
+                    <div class="section-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                </div>
+                <div class="mission-content">
                     <p>The Kenya Reports Archive was created to address a critical gap in our national discourse - the systematic documentation and preservation of official reports that contain solutions to Kenya's most pressing challenges but were never fully implemented.</p>
-                    
                     <p>Since independence, Kenya has invested billions of shillings in commissions, task forces, and special investigations that produced detailed recommendations. While these reports often make headlines when released, they frequently disappear from public consciousness without meaningful implementation.</p>
-                </article>
+                </div>
+            </div>
+        </section>
 
-                <article class="about-section">
+        <section class="about-section problem-section">
+            <div class="container">
+                <div class="section-header">
                     <h2>The Problem We're Addressing</h2>
-                    <p>Our research has identified several key issues:</p>
-                    
-                    <div class="problem-grid">
-                        <div class="problem-card">
-                            <h3>1. Report Disappearance</h3>
-                            <p>Many important reports become inaccessible shortly after launch, with original copies disappearing from government websites and physical copies available only in select libraries.</p>
-                        </div>
-                        
-                        <div class="problem-card">
-                            <h3>2. Implementation Deficit</h3>
-                            <p>Analysis shows less than 30% of recommendations from major commissions have been fully implemented, with many completely ignored.</p>
-                        </div>
-                        
-                        <div class="problem-card">
-                            <h3>3. Public Awareness Gap</h3>
-                            <p>Most citizens are unaware of the specific recommendations contained in these reports, making accountability difficult.</p>
-                        </div>
-                        
-                        <div class="problem-card">
-                            <h3>4. Historical Amnesia</h3>
-                            <p>Similar issues keep recurring because lessons from past investigations aren't institutionalized.</p>
-                        </div>
+                    <div class="section-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
                     </div>
-                </article>
+                </div>
+                <div class="problem-grid">
+                    <div class="problem-card">
+                        <div class="problem-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Report Disappearance</h3>
+                        <p>Many important reports become inaccessible shortly after launch, with original copies disappearing from government websites and physical copies available only in select libraries.</p>
+                    </div>
+                    
+                    <div class="problem-card">
+                        <div class="problem-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h3>Implementation Deficit</h3>
+                        <p>Analysis shows less than 30% of recommendations from major commissions have been fully implemented, with many completely ignored despite their potential impact.</p>
+                    </div>
+                    
+                    <div class="problem-card">
+                        <div class="problem-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Public Awareness Gap</h3>
+                        <p>Most citizens are unaware of the specific recommendations contained in these reports, making accountability difficult and perpetuating cycles of unaddressed issues.</p>
+                    </div>
+                    
+                    <div class="problem-card">
+                        <div class="problem-icon">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <h3>Historical Amnesia</h3>
+                        <p>Similar issues keep recurring because lessons from past investigations aren't institutionalized, leading to wasted resources on new commissions for old problems.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <article class="about-section">
+        <section class="about-section methodology-section">
+            <div class="container">
+                <div class="section-header">
                     <h2>Our Methodology</h2>
-                    <p>We employ a rigorous process to ensure the archive remains accurate and useful:</p>
-                    
-                    <ol class="methodology-list">
-                        <li>
-                            <strong>Report Identification</strong>
-                            <p>We identify all major government-commissioned reports through parliamentary records, media archives, and expert consultations.</p>
-                        </li>
-                        <li>
-                            <strong>Verification</strong>
-                            <p>Each report is verified against original sources to ensure we have complete, unaltered versions.</p>
-                        </li>
-                        <li>
-                            <strong>Analysis</strong>
-                            <p>Our team analyzes each report to extract key findings, recommendations, and implementation status.</p>
-                        </li>
-                        <li>
-                            <strong>Standardization</strong>
-                            <p>Reports are presented in a consistent format for easy comparison and reference.</p>
-                        </li>
-                        <li>
-                            <strong>Public Engagement</strong>
-                            <p>We create accessible summaries and discussion guides to facilitate public understanding.</p>
-                        </li>
-                    </ol>
-                </article>
-
-                <article class="about-section">
-                    <h2>Why This Matters</h2>
-                    <p>This archive serves multiple critical purposes:</p>
-                    
-                    <div class="importance-grid">
-                        <div class="importance-card">
-                            <img src="images/icons/accountability.png" alt="Accountability icon">
-                            <h3>Accountability</h3>
-                            <p>Provides citizens with tools to hold leaders accountable for implementing recommendations.</p>
-                        </div>
-                        
-                        <div class="importance-card">
-                            <img src="images/icons/knowledge.png" alt="Knowledge icon">
-                            <h3>Institutional Memory</h3>
-                            <p>Preserves institutional knowledge that might otherwise be lost.</p>
-                        </div>
-                        
-                        <div class="importance-card">
-                            <img src="images/icons/research.png" alt="Research icon">
-                            <h3>Research Resource</h3>
-                            <p>Serves as a valuable resource for researchers, journalists, and policymakers.</p>
-                        </div>
-                        
-                        <div class="importance-card">
-                            <img src="images/icons/democracy.png" alt="Democracy icon">
-                            <h3>Democratic Participation</h3>
-                            <p>Empowers citizens to participate meaningfully in governance discussions.</p>
+                    <div class="section-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                </div>
+                <div class="methodology-steps">
+                    <div class="methodology-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Report Identification</h3>
+                            <p>We identify all major government-commissioned reports through parliamentary records, media archives, and expert consultations. Each report is evaluated for significance and potential impact.</p>
                         </div>
                     </div>
-                </article>
+                    
+                    <div class="methodology-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Verification & Authentication</h3>
+                            <p>Each report is verified against multiple sources to ensure we have complete, unaltered versions. We cross-check with official government publications and archival records.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="methodology-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Analysis & Summarization</h3>
+                            <p>Our team of researchers analyzes each report to extract key findings, recommendations, and implementation status. We create both comprehensive and simplified versions for different audiences.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="methodology-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Standardized Presentation</h3>
+                            <p>Reports are presented in a consistent format with uniform metadata, making comparison and reference easier. We include original documents alongside our analysis.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="methodology-step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Public Engagement</h3>
+                            <p>We create accessible summaries, discussion guides, and educational materials to facilitate public understanding and debate around these critical documents.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <article class="about-section">
-                    <h2>Our Team</h2>
-                    <p>The Kenya Reports Archive is maintained by a dedicated group of researchers, archivists, and digital rights activists committed to open governance. While we maintain editorial independence, we collaborate with:</p>
+        <section class="about-section impact-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Why This Archive Matters</h2>
+                    <div class="section-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="impact-grid">
+                    <div class="impact-card">
+                        <div class="impact-icon">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <h3>Accountability</h3>
+                        <p>Provides citizens with tools to hold leaders accountable for implementing recommendations they've already paid for through taxes.</p>
+                    </div>
                     
-                    <ul class="collaborators-list">
-                        <li>Academic institutions</li>
-                        <li>Civil society organizations</li>
-                        <li>Media partners</li>
-                        <li>Concerned citizens</li>
-                    </ul>
+                    <div class="impact-card">
+                        <div class="impact-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Institutional Memory</h3>
+                        <p>Preserves institutional knowledge that might otherwise be lost, preventing repetitive commissions on the same issues.</p>
+                    </div>
                     
-                    <div class="team-note">
+                    <div class="impact-card">
+                        <div class="impact-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Research Resource</h3>
+                        <p>Serves as a centralized resource for researchers, journalists, students, and policymakers working on Kenyan governance issues.</p>
+                    </div>
+                    
+                    <div class="impact-card">
+                        <div class="impact-icon">
+                            <i class="fas fa-democrat"></i>
+                        </div>
+                        <h3>Democratic Participation</h3>
+                        <p>Empowers citizens to participate meaningfully in governance discussions with factual knowledge of past recommendations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section team-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Team & Collaborators</h2>
+                    <div class="section-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                </div>
+                <div class="team-content">
+                    <p>The Kenya Reports Archive is maintained by a dedicated group of researchers, archivists, and digital rights activists committed to open governance and public accountability. While we maintain editorial independence, we collaborate with:</p>
+                    
+                    <div class="collaborators">
+                        <div class="collaborator-card">
+                            <div class="collaborator-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <h3>Academic Institutions</h3>
+                            <p>Partnering with universities for research and analysis of report contents.</p>
+                        </div>
+                        
+                        <div class="collaborator-card">
+                            <div class="collaborator-icon">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <h3>Civil Society</h3>
+                            <p>Working with NGOs to promote awareness and implementation tracking.</p>
+                        </div>
+                        
+                        <div class="collaborator-card">
+                            <div class="collaborator-icon">
+                                <i class="fas fa-newspaper"></i>
+                            </div>
+                            <h3>Media Partners</h3>
+                            <p>Collaborating with journalists to highlight key findings and updates.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-note">
                         <p><strong>Note:</strong> The social media links in our footer connect to Maestropuns' channels, which support this project's visibility but are separate from our core archive team.</p>
                     </div>
-                </article>
+                </div>
+            </div>
+        </section>
 
-                <article class="about-section">
+        <section class="about-section contribute-section">
+            <div class="container">
+                <div class="section-header">
                     <h2>How You Can Help</h2>
-                    <p>This is a community-driven project. You can contribute by:</p>
-                    
-                    <div class="contribution-options">
-                        <div class="contribution-card">
-                            <h3>Report Suggestions</h3>
-                            <p>Notify us about important reports we might have missed.</p>
-                            <a href="#contact" class="contribute-btn">Contact Us</a>
-                        </div>
-                        
-                        <div class="contribution-card">
-                            <h3>Expert Analysis</h3>
-                            <p>Help analyze and summarize complex reports.</p>
-                            <a href="#contact" class="contribute-btn">Volunteer</a>
-                        </div>
-                        
-                        <div class="contribution-card">
-                            <h3>Spread Awareness</h3>
-                            <p>Share reports with your networks and communities.</p>
-                            <a href="reports/" class="contribute-btn">Browse Reports</a>
-                        </div>
+                    <div class="section-icon">
+                        <i class="fas fa-hands-helping"></i>
                     </div>
-                </article>
+                </div>
+                <div class="contribute-grid">
+                    <div class="contribute-card">
+                        <div class="contribute-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Report Suggestions</h3>
+                        <p>Notify us about important reports we might have missed in our archive.</p>
+                        <a href="#contact" class="contribute-button">
+                            <i class="fas fa-envelope"></i>
+                            Contact Us
+                        </a>
+                    </div>
+                    
+                    <div class="contribute-card">
+                        <div class="contribute-icon">
+                            <i class="fas fa-pen-fancy"></i>
+                        </div>
+                        <h3>Expert Analysis</h3>
+                        <p>Contribute your expertise to help analyze and summarize complex reports.</p>
+                        <a href="#contact" class="contribute-button">
+                            <i class="fas fa-user-plus"></i>
+                            Volunteer
+                        </a>
+                    </div>
+                    
+                    <div class="contribute-card">
+                        <div class="contribute-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <h3>Spread Awareness</h3>
+                        <p>Share reports with your networks and communities to increase their impact.</p>
+                        <a href="reports/" class="contribute-button">
+                            <i class="fas fa-book-open"></i>
+                            Browse Reports
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -177,43 +303,68 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
-                    <img src="images/logo.png" alt="Kenya Reports Archive Logo" class="footer-logo">
-                    <p>Preserving Kenya's unimplemented reform documents for public access and accountability.</p>
+                    <div class="footer-logo">
+                        <i class="fas fa-archive"></i>
+                        <span>Kenya Reports Archive</span>
+                    </div>
+                    <p>Preserving Kenya's unimplemented reform documents for public access and accountability. Building a more informed citizenry through accessible information.</p>
                 </div>
-                
+
                 <div class="footer-links">
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="reports/">Reports</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="about.html">About This Project</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-social">
                     <h3>Follow Maestropuns</h3>
                     <div class="social-icons">
-                        <a href="https://twitter.com/maestropuns" target="_blank" rel="noopener noreferrer">
-                            <img src="images/social/twitter.png" alt="Twitter">
+                        <a href="https://twitter.com/maestropuns" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="https://facebook.com/maestropuns" target="_blank" rel="noopener noreferrer">
-                            <img src="images/social/facebook.png" alt="Facebook">
+                        <a href="https://facebook.com/maestropuns" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="https://instagram.com/maestropuns" target="_blank" rel="noopener noreferrer">
-                            <img src="images/social/instagram.png" alt="Instagram">
+                        <a href="https://instagram.com/maestropuns" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/maestropuns" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
                         </a>
                     </div>
                     <p class="social-note">Social media channels maintained by Maestropuns</p>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
-                <p>&copy; <span id="current-year"></span> Kenya Reports Archive. All rights reserved.</p>
-                <p class="disclaimer">This is an independent project not affiliated with any government institution.</p>
+                <p>&copy; <span id="current-year">2025</span> Kenya Reports Archive. All rights reserved. Made with ❤️ for Kenya.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="bottom-nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="reports/" class="bottom-nav-item">
+            <i class="fas fa-book-open"></i>
+            <span>Reports</span>
+        </a>
+        <a href="about.html" class="bottom-nav-item active">
+            <i class="fas fa-info-circle"></i>
+            <span>About</span>
+        </a>
+        <a href="#contact" class="bottom-nav-item">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+    </nav>
 
     <script src="js/script.js"></script>
 </body>
