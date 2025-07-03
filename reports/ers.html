@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERS Report (2003) | Kenya Reports Archive</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <meta name="description" content="Analysis of Kenya's Economic Recovery Strategy Report 2003-2007">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="progress-bar"></div>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-archive"></i>
+                    <span class="site-title">Kenya Reports Archive</span>
+                </a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../reports/">Reports</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <button class="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="report-container">
+        <article class="report-content">
+            <!-- Report Header -->
+            <header class="report-header">
+                <div class="report-badge">
+                    <i class="fas fa-chart-line"></i>
+                    Economic Blueprint
+                </div>
+                <h1>Economic Recovery Strategy (2003)</h1>
+                <div class="report-meta">
+                    <span><i class="fas fa-calendar-alt"></i> Released: June 2003</span>
+                    <span><i class="fas fa-file-pdf"></i> 98 pages</span>
+                    <span><i class="fas fa-user-tie"></i> Ministry of Planning & National Development</span>
+                </div>
+            </header>
+
+            <!-- Executive Summary -->
+            <section class="report-section">
+                <h2><i class="fas fa-file-alt"></i> Executive Summary</h2>
+                <p>The Economic Recovery Strategy (ERS), officially titled <em>"Economic Recovery Strategy for Wealth and Employment Creation 2003-2007"</em>, was the first major economic blueprint of the NARC government following the 2002 transition. It aimed to reverse Kenya's economic decline under the Moi administration.</p>
+                
+                <div class="key-findings">
+                    <h3>Core Objectives:</h3>
+                    <ul>
+                        <li>Reverse GDP decline from 0.5% (2002) to 6-7% growth</li>
+                        <li>Reduce fiscal deficit from 3.2% to 1.7% of GDP</li>
+                        <li>Create 500,000 new jobs annually</li>
+                        <li>Restore investor confidence through governance reforms</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Key Findings -->
+            <section class="report-section">
+                <h2><i class="fas fa-search"></i> Key Findings</h2>
+                
+                <div class="chart-grid">
+                    <div class="chart-container">
+                        <canvas id="economicIndicatorsChart"></canvas>
+                        <p class="chart-caption">Fig 1: Key economic indicators pre-ERS (2002) (Source: KNBS)</p>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <canvas id="sectorGrowthChart"></canvas>
+                        <p class="chart-caption">Fig 2: Projected sector growth under ERS (2003-2007)</p>
+                    </div>
+                </div>
+                
+                <div class="findings-list">
+                    <div class="finding-card critical">
+                        <h3>1. Economic Crisis (2002)</h3>
+                        <p>The report documented <strong>severe economic deterioration</strong>:</p>
+                        <ul>
+                            <li>GDP growth at 0.5% (lowest since independence)</li>
+                            <li>Public debt at 70% of GDP</li>
+                            <li>Unemployment at 14.6% (urban areas 22%)</li>
+                            <li>Inflation at 9.5% (food inflation 15.2%)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="finding-card">
+                        <h3>2. Structural Weaknesses</h3>
+                        <p>Identified systemic constraints:</p>
+                        <ul>
+                            <li>Corruption consuming 30% of national budget</li>
+                            <li>Agricultural productivity declined by 3.2% annually</li>
+                            <li>Infrastructure spending at 1.8% of GDP (needed 6%)</li>
+                            <li>Private sector credit growth at 2.1% (below 15% target)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="finding-card">
+                        <h3>3. Governance Failures</h3>
+                        <p>Institutional challenges:</p>
+                        <ul>
+                            <li>Public sector wage bill consumed 9.2% of GDP</li>
+                            <li>Only 43% of development budget implemented</li>
+                            <li>Judiciary case backlog of 82,000 cases</li>
+                            <li>50% of businesses cited corruption as top constraint</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recommendations -->
+            <section class="report-section">
+                <h2><i class="fas fa-bullseye"></i> Key Strategies</h2>
+                
+                <div class="recommendations-grid">
+                    <div class="recommendation-card urgent">
+                        <div class="rec-number">01</div>
+                        <h3>Macroeconomic Stability</h3>
+                        <p>Reduce fiscal deficit from 3.2% to 1.7% through expenditure rationalization</p>
+                    </div>
+                    
+                    <div class="recommendation-card">
+                        <div class="rec-number">02</div>
+                        <h3>Agricultural Revival</h3>
+                        <p>Increase sector growth from -3.2% to 5% through input subsidies and credit</p>
+                    </div>
+                    
+                    <div class="recommendation-card urgent">
+                        <div class="rec-number">03</div>
+                        <h3>Infrastructure Investment</h3>
+                        <p>Increase infrastructure spending to 6% of GDP targeting roads and energy</p>
+                    </div>
+                    
+                    <div class="recommendation-card">
+                        <div class="rec-number">04</div>
+                        <h3>Governance Reforms</h3>
+                        <p>Establish anti-corruption institutions and judicial reforms</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Implementation Status -->
+            <section class="report-section status-section">
+                <h2><i class="fas fa-tasks"></i> Implementation Outcomes (2007 Evaluation)</h2>
+                
+                <div class="status-chart">
+                    <canvas id="ersOutcomesChart"></canvas>
+                </div>
+                
+                <div class="status-key">
+                    <div class="key-item">
+                        <span class="key-dot not-started"></span>
+                        <span>Not Achieved (30%)</span>
+                    </div>
+                    <div class="key-item">
+                        <span class="key-dot partial"></span>
+                        <span>Partially Achieved (45%)</span>
+                    </div>
+                    <div class="key-item">
+                        <span class="key-dot complete"></span>
+                        <span>Fully Achieved (25%)</span>
+                    </div>
+                </div>
+                
+                <div class="status-details">
+                    <h3>Key Results:</h3>
+                    <ul>
+                        <li><strong>Achieved:</strong> GDP growth reached 6.1% (2006)</li>
+                        <li><strong>Partial:</strong> Created 350,000 jobs/year (vs 500k target)</li>
+                        <li><strong>Partial:</strong> Reduced fiscal deficit to 2.1% (vs 1.7%)</li>
+                        <li><strong>Failed:</strong> Anti-corruption efforts collapsed after 2005</li>
+                    </ul>
+                    
+                    <div class="source-box">
+                        <p><strong>Sources:</strong> World Bank Kenya Economic Update (2007), KNBS Statistical Abstract (2008)</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Download Section -->
+            <section class="report-download">
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h2>Download Full Report</h2>
+                    <p>Access the complete ERS Report from the official repository:</p>
+                    <a href="https://www.treasury.go.ke/publications/economic-reports/economic-recovery-strategy/file/98-economic-recovery-strategy-for-wealth-and-employment-creation-2003-2007.html" class="download-btn" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-download"></i> Download PDF (3.4MB)
+                    </a>
+                    <div class="file-details">
+                        <p><strong>Original Source:</strong> National Treasury</p>
+                        <p><strong>Direct Link:</strong> <small>treasury.go.ke/publications/economic-reports/</small></p>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="site-footer" id="contact">
+        <!-- Same footer as previous templates -->
+    </footer>
+
+    <nav class="bottom-nav">
+        <!-- Same bottom nav as previous templates -->
+    </nav>
+
+    <script>
+        // Chart.js Implementation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Economic Indicators Chart
+            const econCtx = document.getElementById('economicIndicatorsChart').getContext('2d');
+            new Chart(econCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['GDP Growth', 'Inflation', 'Fiscal Deficit (%GDP)', 'Unemployment', 'Debt/GDP'],
+                    datasets: [{
+                        label: '2002 Indicators',
+                        data: [0.5, 9.5, 3.2, 14.6, 70],
+                        backgroundColor: 'rgba(231, 76, 60, 0.7)',
+                        borderColor: 'rgba(231, 76, 60, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Pre-ERS Economic Crisis Indicators'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Sector Growth Chart
+            const sectorCtx = document.getElementById('sectorGrowthChart').getContext('2d');
+            new Chart(sectorCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['Agriculture', 'Manufacturing', 'Tourism', 'Construction', 'Financial Services', 'ICT'],
+                    datasets: [{
+                        label: 'Projected Annual Growth (%)',
+                        data: [5, 7, 12, 8, 9, 15],
+                        backgroundColor: 'rgba(39, 174, 96, 0.5)',
+                        borderColor: 'rgba(39, 174, 96, 1)',
+                        pointBackgroundColor: 'rgba(39, 174, 96, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(39, 174, 96, 1)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        r: {
+                            angleLines: { display: true },
+                            suggestedMin: 0,
+                            suggestedMax: 20
+                        }
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'ERS Sector Growth Targets (2003-2007)'
+                        }
+                    }
+                }
+            });
+
+            // Implementation Outcomes Chart
+            const ersOutCtx = document.getElementById('ersOutcomesChart').getContext('2d');
+            new Chart(ersOutCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Not Achieved', 'Partially Achieved', 'Fully Achieved'],
+                    datasets: [{
+                        data: [30, 45, 25],
+                        backgroundColor: [
+                            'rgba(231, 76, 60, 0.7)',
+                            'rgba(241, 196, 15, 0.7)',
+                            'rgba(39, 174, 96, 0.7)'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'ERS Implementation Outcomes (2007)'
+                        }
+                    }
+                }
+            });
+
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
