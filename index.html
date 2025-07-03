@@ -24,7 +24,7 @@
                 <nav class="main-nav">
                     <ul>
                         <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="reports/">Reports</a></li>
+                        <li><a href="reports/reports.html">Reports</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -42,7 +42,7 @@
                 <div class="hero-content">
                     <h1>Kenya's Forgotten Reports</h1>
                     <p class="tagline">Documenting the unimplemented reforms that could have transformed our nation</p>
-                    <a href="reports/" class="cta-button">
+                    <a href="reports/reports.html" class="cta-button">
                         <i class="fas fa-book-open"></i>
                         Explore Reports
                     </a>
@@ -113,7 +113,7 @@
                 <h2>Knowledge for Accountability</h2>
                 <p>These reports contain solutions to many of Kenya's persistent challenges. By studying them, we can hold leaders accountable for implementation and drive meaningful change.</p>
                 <div class="action-buttons">
-                    <a href="reports/" class="cta-button">
+                    <a href="reports/kfa.html" class="cta-button">
                         <i class="fas fa-search"></i>
                         Browse All Reports
                     </a>
@@ -141,7 +141,7 @@
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="reports/">Reports</a></li>
+                        <li><a href="reports/reports.html">Reports</a></li>
                         <li><a href="about.html">About This Project</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -178,7 +178,7 @@
             <i class="fas fa-home"></i>
             <span>Home</span>
         </a>
-        <a href="reports/" class="bottom-nav-item">
+        <a href="reports/reports.html" class="bottom-nav-item">
             <i class="fas fa-book-open"></i>
             <span>Reports</span>
         </a>
@@ -192,6 +192,11 @@
         </a>
     </nav>
 
-    <script src="js/script.js"></script>
+    <script>
+        // Set current year in footer
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
 </body>
 </html>
