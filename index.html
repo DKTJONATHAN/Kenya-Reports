@@ -60,8 +60,29 @@
         <section class="featured-reports">
             <div class="container">
                 <h2>Key Reports in Our Archive</h2>
-                <div class="report-grid">
-                    <article class="report-card">
+                <div class="search-filter">
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="Search reports...">
+                        <button id="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="filter-dropdown">
+                        <select id="category-filter">
+                            <option value="">Filter by Category</option>
+                            <option value="land">Land & Property</option>
+                            <option value="governance">Governance</option>
+                            <option value="finance">Finance & Economy</option>
+                            <option value="human-rights">Human Rights</option>
+                            <option value="elections">Elections</option>
+                            <option value="judicial">Judicial</option>
+                            <option value="security">Security</option>
+                            <option value="economic">Economic</option>
+                            <option value="bipartisan">Bipartisan</option>
+                            <option value="reconciliation">Reconciliation</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="report-grid" id="reports-container">
+                    <article class="report-card" data-id="kriegler" data-category="elections">
                         <div class="report-icon">
                             <i class="fas fa-gavel"></i>
                         </div>
@@ -72,7 +93,7 @@
                         </a>
                     </article>
 
-                    <article class="report-card">
+                    <article class="report-card" data-id="tjrc" data-category="reconciliation">
                         <div class="report-icon">
                             <i class="fas fa-balance-scale"></i>
                         </div>
@@ -83,7 +104,7 @@
                         </a>
                     </article>
 
-                    <article class="report-card">
+                    <article class="report-card" data-id="ndungu" data-category="land">
                         <div class="report-icon">
                             <i class="fas fa-map"></i>
                         </div>
@@ -94,7 +115,7 @@
                         </a>
                     </article>
 
-                    <article class="report-card">
+                    <article class="report-card" data-id="nadco" data-category="bipartisan">
                         <div class="report-icon">
                             <i class="fas fa-users"></i>
                         </div>
@@ -104,6 +125,11 @@
                             View Details <i class="fas fa-arrow-right"></i>
                         </a>
                     </article>
+                </div>
+                <div class="pagination">
+                    <a href="#" class="page-link disabled" id="prev-page"><i class="fas fa-chevron-left"></i> Previous</a>
+                    <div id="page-numbers"></div>
+                    <a href="#" class="page-link" id="next-page">Next <i class="fas fa-chevron-right"></i></a>
                 </div>
             </div>
         </section>
@@ -196,7 +222,222 @@
         // Set current year in footer
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Initialize reports
+            initializeReports();
+            
+            // Set up event listeners
+            setupEventListeners();
         });
+
+        // Reports data
+        const reportsData = [
+            {
+                id: 'kriegler',
+                title: 'Kriegler Report (2008)',
+                excerpt: 'Investigation into the 2007/2008 post-election violence and electoral failures with comprehensive recommendations for electoral reforms.',
+                year: '2008',
+                pages: '156',
+                category: 'elections',
+                icon: 'gavel',
+                badgeText: 'Election Report',
+                link: 'reports/kriegler.html'
+            },
+            {
+                id: 'tjrc',
+                title: 'TJRC Report (2013)',
+                excerpt: 'Truth, Justice and Reconciliation Commission\'s findings on historical injustices and path to national healing.',
+                year: '2013',
+                pages: '480',
+                category: 'reconciliation',
+                icon: 'balance-scale',
+                badgeText: 'Reconciliation',
+                link: 'reports/tjrc.html'
+            },
+            {
+                id: 'ndungu',
+                title: 'Ndungu Land Report (2004)',
+                excerpt: 'Commission of Inquiry into the illegal/irregular allocation of public land with detailed recommendations for land reform.',
+                year: '2004',
+                pages: '342',
+                category: 'land',
+                icon: 'map',
+                badgeText: 'Land Report',
+                link: 'reports/ndungu.html'
+            },
+            {
+                id: 'nadco',
+                title: 'NADCO Report (2023)',
+                excerpt: 'National Dialogue Committee recommendations on electoral reforms and national unity initiatives.',
+                year: '2023',
+                pages: '132',
+                category: 'bipartisan',
+                icon: 'users',
+                badgeText: 'Bipartisan Report',
+                link: 'reports/nadco.html'
+            }
+        ];
+
+        // Pagination variables
+        let currentPage = 1;
+        const reportsPerPage = 4;
+        let filteredReports = [...reportsData];
+
+        // Initialize reports
+        function initializeReports() {
+            displayReports(filteredReports);
+            renderPagination();
+        }
+
+        // Display reports
+        function displayReports(reports) {
+            const container = document.getElementById('reports-container');
+            container.innerHTML = '';
+
+            // Calculate pagination
+            const startIndex = (currentPage - 1) * reportsPerPage;
+            const endIndex = startIndex + reportsPerPage;
+            const paginatedReports = reports.slice(startIndex, endIndex);
+
+            if (paginatedReports.length === 0) {
+                container.innerHTML = '<div class="no-results"><i class="fas fa-search"></i><p>No reports found matching your criteria</p></div>';
+                return;
+            }
+
+            paginatedReports.forEach(report => {
+                const reportCard = document.createElement('article');
+                reportCard.className = 'report-card';
+                reportCard.dataset.id = report.id;
+                reportCard.dataset.category = report.category;
+
+                reportCard.innerHTML = `
+                    <div class="report-icon">
+                        <i class="fas fa-${report.icon}"></i>
+                    </div>
+                    <h3>${report.title}</h3>
+                    <p>${report.excerpt}</p>
+                    <div class="card-meta">
+                        <span><i class="fas fa-calendar-alt"></i> ${report.year}</span>
+                        <span><i class="fas fa-file-pdf"></i> ${report.pages} pages</span>
+                    </div>
+                    <a href="${report.link}" class="read-more">
+                        View Details <i class="fas fa-arrow-right"></i>
+                    </a>
+                `;
+
+                container.appendChild(reportCard);
+            });
+        }
+
+        // Render pagination
+        function renderPagination() {
+            const totalPages = Math.ceil(filteredReports.length / reportsPerPage);
+            const pageNumbersContainer = document.getElementById('page-numbers');
+            pageNumbersContainer.innerHTML = '';
+
+            // Previous button
+            document.getElementById('prev-page').classList.toggle('disabled', currentPage === 1);
+
+            // Page numbers
+            for (let i = 1; i <= totalPages; i++) {
+                const pageLink = document.createElement('a');
+                pageLink.href = '#';
+                pageLink.className = 'page-link';
+                if (i === currentPage) pageLink.classList.add('active');
+                pageLink.textContent = i;
+                pageLink.dataset.page = i;
+                pageLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentPage = parseInt(e.target.dataset.page);
+                    displayReports(filteredReports);
+                    renderPagination();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+                pageNumbersContainer.appendChild(pageLink);
+            }
+
+            // Next button
+            document.getElementById('next-page').classList.toggle('disabled', currentPage === totalPages);
+        }
+
+        // Filter reports by search term
+        function filterReports(searchTerm = '', category = '') {
+            currentPage = 1; // Reset to first page when filtering
+            
+            filteredReports = reportsData.filter(report => {
+                const matchesSearch = 
+                    report.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    report.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    report.badgeText.toLowerCase().includes(searchTerm.toLowerCase());
+                
+                const matchesCategory = category === '' || report.category === category;
+                
+                return matchesSearch && matchesCategory;
+            });
+
+            displayReports(filteredReports);
+            renderPagination();
+        }
+
+        // Set up event listeners
+        function setupEventListeners() {
+            // Search functionality
+            const searchInput = document.getElementById('search-input');
+            const searchBtn = document.getElementById('search-btn');
+            
+            searchBtn.addEventListener('click', () => {
+                const searchTerm = searchInput.value.trim();
+                const category = document.getElementById('category-filter').value;
+                filterReports(searchTerm, category);
+            });
+            
+            searchInput.addEventListener('keyup', (e) => {
+                if (e.key === 'Enter') {
+                    const searchTerm = searchInput.value.trim();
+                    const category = document.getElementById('category-filter').value;
+                    filterReports(searchTerm, category);
+                }
+            });
+
+            // Category filter
+            document.getElementById('category-filter').addEventListener('change', (e) => {
+                const category = e.target.value;
+                const searchTerm = searchInput.value.trim();
+                filterReports(searchTerm, category);
+            });
+
+            // Pagination buttons
+            document.getElementById('prev-page').addEventListener('click', (e) => {
+                e.preventDefault();
+                if (currentPage > 1) {
+                    currentPage--;
+                    displayReports(filteredReports);
+                    renderPagination();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+
+            document.getElementById('next-page').addEventListener('click', (e) => {
+                e.preventDefault();
+                const totalPages = Math.ceil(filteredReports.length / reportsPerPage);
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    displayReports(filteredReports);
+                    renderPagination();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        }
     </script>
-</body>
-</html>
+
+    <style>
+        /* Additional styles for search and filter functionality */
+        .search-filter {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            display: flex;
