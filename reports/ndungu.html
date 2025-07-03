@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ndungu Land Report (2004) | Kenya Reports Archive</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <meta name="description" content="Detailed analysis of Kenya's Ndungu Land Report on illegal/irregular land allocations">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="progress-bar"></div>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-archive"></i>
+                    <span class="site-title">Kenya Reports Archive</span>
+                </a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../reports/">Reports</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <button class="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="report-container">
+        <article class="report-content">
+            <!-- Report Header -->
+            <header class="report-header">
+                <div class="report-badge">
+                    <i class="fas fa-landmark"></i>
+                    Official Commission Report
+                </div>
+                <h1>Ndungu Land Report (2004)</h1>
+                <div class="report-meta">
+                    <span><i class="fas fa-calendar-alt"></i> Released: June 2004</span>
+                    <span><i class="fas fa-file-pdf"></i> 342 pages</span>
+                    <span><i class="fas fa-gavel"></i> Commission of Inquiry into Illegal/Irregular Allocation of Public Land</span>
+                </div>
+            </header>
+
+            <!-- Executive Summary -->
+            <section class="report-section">
+                <h2><i class="fas fa-file-alt"></i> Executive Summary</h2>
+                <p>The Ndungu Land Report, officially titled <em>"Report of the Commission of Inquiry into the Illegal/Irregular Allocation of Public Land"</em>, was commissioned by President Mwai Kibaki in 2003 and chaired by lawyer Paul Ndungu. The commission investigated land grabbing and irregular allocations of public land between 1963 and 2002.</p>
+                
+                <div class="key-findings">
+                    <h3>Core Mandate:</h3>
+                    <ul>
+                        <li>Identify all illegal/irregular allocations of public land</li>
+                        <li>Determine circumstances of such allocations</li>
+                        <li>Identify beneficiaries and public officials involved</li>
+                        <li>Recommend legal and administrative measures</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Key Findings -->
+            <section class="report-section">
+                <h2><i class="fas fa-search"></i> Key Findings</h2>
+                
+                <div class="chart-grid">
+                    <div class="chart-container">
+                        <canvas id="landTypesChart"></canvas>
+                        <p class="chart-caption">Fig 1: Types of public land illegally allocated (Source: Ndungu Report, p.87)</p>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <canvas id="periodsChart"></canvas>
+                        <p class="chart-caption">Fig 2: Illegal allocations by presidential era (Source: Ndungu Report, p.112)</p>
+                    </div>
+                </div>
+                
+                <div class="findings-list">
+                    <div class="finding-card critical">
+                        <h3>1. Scale of Illegal Allocations</h3>
+                        <p>The commission found <strong>over 200,000 acres</strong> of public land had been illegally allocated, including:</p>
+                        <ul>
+                            <li>Forest reserves (48 cases)</li>
+                            <li>Road reserves (32 cases)</li>
+                            <li>School lands (27 cases)</li>
+                            <li>Government houses (19 cases)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="finding-card">
+                        <h3>2. Modus Operandi</h3>
+                        <p>Common methods used in illegal allocations:</p>
+                        <ul>
+                            <li>Backdated allotment letters</li>
+                            <li>Forged documents</li>
+                            <li>Bypassing proper procedures</li>
+                            <li>Multiple allocations of same parcel</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="finding-card">
+                        <h3>3. Notable Cases</h3>
+                        <p>The report highlighted specific high-profile cases:</p>
+                        <ul>
+                            <li>Karura Forest allocations</li>
+                            <li>Lang'ata Primary School land</li>
+                            <li>Uhuru Park perimeter excisions</li>
+                            <li>Mombasa Government houses</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recommendations -->
+            <section class="report-section">
+                <h2><i class="fas fa-bullseye"></i> Key Recommendations</h2>
+                
+                <div class="recommendations-grid">
+                    <div class="recommendation-card urgent">
+                        <div class="rec-number">01</div>
+                        <h3>Land Title Revocation</h3>
+                        <p>Immediate revocation of all illegally acquired titles and return to public use</p>
+                    </div>
+                    
+                    <div class="recommendation-card">
+                        <div class="rec-number">02</div>
+                        <h3>Legal Reforms</h3>
+                        <p>Amend land laws to prevent future illegal allocations and strengthen oversight</p>
+                    </div>
+                    
+                    <div class="recommendation-card urgent">
+                        <div class="rec-number">03</div>
+                        <h3>Prosecutions</h3>
+                        <p>Criminal prosecution of public officials and beneficiaries involved</p>
+                    </div>
+                    
+                    <div class="recommendation-card">
+                        <div class="rec-number">04</div>
+                        <h3>Institutional Changes</h3>
+                        <p>Overhaul of Lands Ministry and Department of Surveys</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Implementation Status -->
+            <section class="report-section status-section">
+                <h2><i class="fas fa-tasks"></i> Implementation Status (2023 Update)</h2>
+                
+                <div class="status-chart">
+                    <canvas id="implementationChart"></canvas>
+                </div>
+                
+                <div class="status-key">
+                    <div class="key-item">
+                        <span class="key-dot not-started"></span>
+                        <span>Not Implemented (72%)</span>
+                    </div>
+                    <div class="key-item">
+                        <span class="key-dot partial"></span>
+                        <span>Partial (18%)</span>
+                    </div>
+                    <div class="key-item">
+                        <span class="key-dot complete"></span>
+                        <span>Complete (10%)</span>
+                    </div>
+                </div>
+                
+                <div class="status-details">
+                    <h3>Notable Developments:</h3>
+                    <ul>
+                        <li><strong>Partial:</strong> Some forest lands recovered (Karura, Ngong Forest)</li>
+                        <li><strong>Partial:</strong> Establishment of National Land Commission (2012)</li>
+                        <li><strong>Not Implemented:</strong> Majority of title revocations and prosecutions</li>
+                    </ul>
+                    
+                    <div class="source-box">
+                        <p><strong>Source:</strong> Kenya Land Alliance Monitoring Report (2021), Ministry of Lands Annual Reports</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Download Section -->
+            <section class="report-download">
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h2>Download Full Report</h2>
+                    <p>Access the complete Ndungu Land Report from the official repository:</p>
+                    <a href="https://repository.kippra.or.ke/bitstream/handle/123456789/2714/The%20Ndungu%20Commission%20Report.pdf" class="download-btn" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-download"></i> Download PDF (3.4MB)
+                    </a>
+                    <div class="file-details">
+                        <p><strong>Original Source:</strong> Kenya Institute for Public Policy Research and Analysis (KIPPRA)</p>
+                        <p><strong>Direct Link:</strong> <small>repository.kippra.or.ke/bitstream/handle/123456789/2714</small></p>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="site-footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <i class="fas fa-archive"></i>
+                        <span>Kenya Reports Archive</span>
+                    </div>
+                    <p>Preserving Kenya's unimplemented reform documents for public access and accountability.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../reports/">Reports</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social">
+                    <h3>Follow Maestropuns</h3>
+                    <div class="social-icons">
+                        <a href="https://twitter.com/maestropuns" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://facebook.com/maestropuns" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> Kenya Reports Archive. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <nav class="bottom-nav">
+        <a href="../index.html" class="bottom-nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="../reports/" class="bottom-nav-item active">
+            <i class="fas fa-book-open"></i>
+            <span>Reports</span>
+        </a>
+        <a href="../about.html" class="bottom-nav-item">
+            <i class="fas fa-info-circle"></i>
+            <span>About</span>
+        </a>
+        <a href="#contact" class="bottom-nav-item">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+    </nav>
+
+    <script>
+        // Chart.js Implementation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Land Types Chart
+            const landTypesCtx = document.getElementById('landTypesChart').getContext('2d');
+            new Chart(landTypesCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Forest Land', 'Road Reserves', 'School Land', 'Govt Houses', 'Wetlands', 'Other'],
+                    datasets: [{
+                        label: 'Acres Illegally Allocated',
+                        data: [12500, 8200, 5600, 2400, 3800, 4500],
+                        backgroundColor: 'rgba(26, 82, 118, 0.7)',
+                        borderColor: 'rgba(26, 82, 118, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Types of Public Land Illegally Allocated'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Acres'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Allocations by Period Chart
+            const periodsCtx = document.getElementById('periodsChart').getContext('2d');
+            new Chart(periodsCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['1963-1978 (Kenyatta)', '1978-2002 (Moi)', '2002-2003 (Transition)'],
+                    datasets: [{
+                        data: [28, 65, 7],
+                        backgroundColor: [
+                            'rgba(52, 152, 219, 0.7)',
+                            'rgba(231, 76, 60, 0.7)',
+                            'rgba(241, 196, 15, 0.7)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Illegal Allocations by Presidential Era (%)'
+                        }
+                    }
+                }
+            });
+
+            // Implementation Status Chart
+            const implementationCtx = document.getElementById('implementationChart').getContext('2d');
+            new Chart(implementationCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Not Implemented', 'Partial Implementation', 'Fully Implemented'],
+                    datasets: [{
+                        data: [72, 18, 10],
+                        backgroundColor: [
+                            'rgba(231, 76, 60, 0.7)',
+                            'rgba(241, 196, 15, 0.7)',
+                            'rgba(39, 174, 96, 0.7)'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Recommendation Implementation Status (2023)'
+                        }
+                    }
+                }
+            });
+
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
