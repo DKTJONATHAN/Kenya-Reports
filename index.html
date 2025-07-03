@@ -127,6 +127,27 @@
         .report-card .card-link:hover {
             color: var(--primary-dark);
         }
+
+        /* Featured reports section */
+        .featured-reports .report-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+
+        .featured-reports .report-card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            padding: var(--space-lg);
+            transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+        }
+
+        .featured-reports .report-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
     </style>
 </head>
 <body>
@@ -177,7 +198,24 @@
 
         <section class="featured-reports">
             <div class="container">
-                <h2>Key Reports in Our Archive</h2>
+                <h2>Recently Added Reports</h2>
+                
+                <div class="report-grid" id="featured-reports-container">
+                    <!-- Featured reports will be dynamically populated here -->
+                </div>
+                
+                <div class="text-center" style="margin-top: 2rem;">
+                    <a href="reports/reports.html" class="cta-button">
+                        <i class="fas fa-book-open"></i>
+                        View All Reports
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="search-reports">
+            <div class="container">
+                <h2>Search All Reports</h2>
                 
                 <div class="search-filter">
                     <div class="search-box">
@@ -204,11 +242,11 @@
                     </div>
                 </div>
                 
-                <div class="report-grid" id="reports-container">
-                    <!-- Reports will be dynamically populated here -->
+                <div class="report-grid" id="search-results-container" style="display: none;">
+                    <!-- Search results will be displayed here -->
                 </div>
 
-                <div class="pagination">
+                <div class="pagination" id="search-pagination" style="display: none;">
                     <a href="#" class="page-link disabled" id="prev-page"><i class="fas fa-chevron-left"></i> Previous</a>
                     <div id="page-numbers"></div>
                     <a href="#" class="page-link" id="next-page">Next <i class="fas fa-chevron-right"></i></a>
@@ -221,7 +259,7 @@
                 <h2>Knowledge for Accountability</h2>
                 <p>These reports contain solutions to many of Kenya's persistent challenges. By studying them, we can hold leaders accountable for implementation and drive meaningful change.</p>
                 <div class="action-buttons">
-                    <a href="reports/kfa.html" class="cta-button">
+                    <a href="reports/reports.html" class="cta-button">
                         <i class="fas fa-search"></i>
                         Browse All Reports
                     </a>
@@ -301,7 +339,7 @@
     </nav>
 
     <script>
-        // Reports data
+        // Reports data - same as in reports.html
         const reportsData = [
             {
                 id: 'nadco',
@@ -382,40 +420,35 @@
             }
         ];
 
-        // Pagination variables
+        // Sort reports by year (newest first)
+        const sortedReports = [...reportsData].sort((a, b) => parseInt(b.year) - parseInt(a.year));
+
+        // Pagination variables for search results
         let currentPage = 1;
         const reportsPerPage = 6;
         let filteredReports = [...reportsData];
 
-        // Initialize reports when DOM is loaded
+        // Initialize page when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
             // Set current year in footer
             document.getElementById('current-year').textContent = new Date().getFullYear();
             
-            // Initialize reports
-            displayReports(filteredReports);
-            renderPagination();
+            // Display featured reports (3 newest)
+            displayFeaturedReports();
             
-            // Set up event listeners
-            setupEventListeners();
+            // Set up event listeners for search
+            setupSearchListeners();
         });
 
-        // Display reports
-        function displayReports(reports) {
-            const container = document.getElementById('reports-container');
+        // Display 3 newest featured reports
+        function displayFeaturedReports() {
+            const container = document.getElementById('featured-reports-container');
             container.innerHTML = '';
 
-            // Calculate pagination
-            const startIndex = (currentPage - 1) * reportsPerPage;
-            const endIndex = startIndex + reportsPerPage;
-            const paginatedReports = reports.slice(startIndex, endIndex);
+            // Get 3 newest reports
+            const featuredReports = sortedReports.slice(0, 3);
 
-            if (paginatedReports.length === 0) {
-                container.innerHTML = '<div class="no-results"><i class="fas fa-search"></i><p>No reports found matching your criteria</p></div>';
-                return;
-            }
-
-            paginatedReports.forEach(report => {
+            featuredReports.forEach(report => {
                 const reportCard = document.createElement('article');
                 reportCard.className = 'report-card';
                 reportCard.dataset.id = report.id;
@@ -443,59 +476,31 @@
             });
         }
 
-        // Render pagination
-        function renderPagination() {
-            const totalPages = Math.ceil(filteredReports.length / reportsPerPage);
-            const pageNumbersContainer = document.getElementById('page-numbers');
-            pageNumbersContainer.innerHTML = '';
+        // Display search results
+        function displaySearchResults(reports) {
+            const container = document.getElementById('search-results-container');
+            container.innerHTML = '';
 
-            // Previous button
-            document.getElementById('prev-page').classList.toggle('disabled', currentPage === 1);
+            // Calculate pagination
+            const startIndex = (currentPage - 1) * reportsPerPage;
+            const endIndex = startIndex + reportsPerPage;
+            const paginatedReports = reports.slice(startIndex, endIndex);
 
-            // Page numbers
-            for (let i = 1; i <= totalPages; i++) {
-                const pageLink = document.createElement('a');
-                pageLink.href = '#';
-                pageLink.className = 'page-link';
-                if (i === currentPage) pageLink.classList.add('active');
-                pageLink.textContent = i;
-                pageLink.dataset.page = i;
-                pageLink.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    currentPage = parseInt(e.target.dataset.page);
-                    displayReports(filteredReports);
-                    renderPagination();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
-                pageNumbersContainer.appendChild(pageLink);
+            if (paginatedReports.length === 0) {
+                container.innerHTML = '<div class="no-results"><i class="fas fa-search"></i><p>No reports found matching your criteria</p></div>';
+                return;
             }
 
-            // Next button
-            document.getElementById('next-page').classList.toggle('disabled', currentPage === totalPages);
-        }
+            paginatedReports.forEach(report => {
+                const reportCard = document.createElement('article');
+                reportCard.className = 'report-card';
+                reportCard.dataset.id = report.id;
+                reportCard.dataset.category = report.category;
 
-        // Filter reports by search term and category
-        function filterReports(searchTerm = '', category = '') {
-            currentPage = 1; // Reset to first page when filtering
-            
-            filteredReports = reportsData.filter(report => {
-                const matchesSearch = 
-                    report.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                    report.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                    report.badgeText.toLowerCase().includes(searchTerm.toLowerCase());
-                
-                const matchesCategory = category === '' || report.category === category;
-                
-                return matchesSearch && matchesCategory;
-            });
-
-            displayReports(filteredReports);
-            renderPagination();
-        }
-
-        // Set up event listeners
-        function setupEventListeners() {
-            const searchInput = document.getElementById('search-input');
-            const searchBtn = document.getElementById('search-btn');
-            const clearSearchBtn = document.getElementById('clear-search');
-            cons
+                reportCard.innerHTML = `
+                    <div class="card-badge">
+                        <i class="fas fa-${report.icon}"></i>
+                        ${report.badgeText}
+                    </div>
+                    <div class="card-content">
+             
